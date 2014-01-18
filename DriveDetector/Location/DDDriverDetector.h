@@ -12,6 +12,7 @@
 
 @interface DDDriverDetector : NSObject
 
+@property (nonatomic, weak, readwrite) id<DDDriveDetectorDelegate> delegate;
 @property (nonatomic, assign, readonly) double averageAcceleration;
 @property (nonatomic, assign, readonly) double averageSpeed;
 
@@ -26,6 +27,9 @@
 
 @protocol DDDriveDetectorDelegate <NSObject>
 
-
+@optional
+- (void)driveDetectorBeganUpdatingLocations;
+- (void)driveDetectorStoppedUpdatingLocations;
+- (void)locationUpdatedOnDriveDetector:(DDDriverDetector *)driveDetector;
 
 @end

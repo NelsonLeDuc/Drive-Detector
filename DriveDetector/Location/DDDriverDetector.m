@@ -19,6 +19,8 @@
 @property (nonatomic, strong) CMMotionActivity *currentActivity;
 
 - (void)updateDetectionForActivity:(CMMotionActivity *)activity;
+- (void)startUpdatingLocationData;
+- (void)stopUpdatingLocationData;
 
 @end
 
@@ -52,7 +54,7 @@
                 [self updateDetectionForActivity:activity];
             }];
         else
-            [self.locationManager startUpdatingLocation];
+            [self startUpdatingLocationData];
         
         return YES;
     }
@@ -69,9 +71,25 @@
     self.currentActivity = activity;
     
     if ([activity automotive])
-        [self.locationManager startUpdatingLocation];
+        [self startUpdatingLocationData];
     else
-        [self.locationManager stopUpdatingLocation];
+        [self stopUpdatingLocationData];
+}
+
+- (void)startUpdatingLocationData
+{
+    [self.locationManager startUpdatingLocation];
+    
+    if ([self.delegate respondsToSelector:@selector(driveDetectorStoppedUpdatingLocations)])
+        [self.delegate driveDetectorBeganUpdatingLocations];
+}
+
+- (void)stopUpdatingLocationData
+{
+    [self.locationManager startUpdatingLocation];
+    
+    if ([self.delegate respondsToSelector:@selector(driveDetectorBeganUpdatingLocations)])
+        [self.delegate driveDetectorBeganUpdatingLocations];
 }
 
 #pragma mark - Property Setters/Getters
@@ -92,6 +110,9 @@
 {
     CLLocation *location = [locations lastObject];
     [self.currentDrive addSpeed:[location speed] withTimeStamp:[location timestamp]];
+    
+    if ([self.delegate respondsToSelector:@selector(locationUpdatedOnDriveDetector:)])
+        [self.delegate locationUpdatedOnDriveDetector:self];
 }
 
 @end
