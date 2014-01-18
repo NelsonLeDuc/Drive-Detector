@@ -10,4 +10,8 @@
 
 @interface DDViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *accelerationLabel;
+@property (nonatomic, weak) IBOutlet UILabel *speedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *detectingLabel;
+
 @end
