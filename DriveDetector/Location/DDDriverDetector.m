@@ -17,10 +17,14 @@
 @property (nonatomic, strong) CMMotionActivityManager *activityManager;
 @property (nonatomic, strong) DDDrive *currentDrive;
 @property (nonatomic, strong) CMMotionActivity *currentActivity;
+@property (nonatomic, strong) NSTimer *inactivityTimer;
+@property (nonatomic, assign, readwrite) BOOL detectingLocation;
 
 - (void)updateDetectionForActivity:(CMMotionActivity *)activity;
 - (void)startUpdatingLocationData;
 - (void)stopUpdatingLocationData;
+- (void)updateInactivityTimer;
+- (void)activityFailedToOccurInTime;
 
 @end
 
@@ -34,11 +38,15 @@
     if (self)
     {
         _locationManager = [[CLLocationManager alloc] init];
+        [_locationManager setDistanceFilter:5.0];
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         [_locationManager setDelegate:self];
         
         _activityManager = [[CMMotionActivityManager alloc] init];
         
         _currentDrive = [[DDDrive alloc] init];
+        
+        _detectingLocation = NO;
     }
     return self;
 }
@@ -61,6 +69,12 @@
     return NO;
 }
 
+- (void)stopDetecting
+{
+    [self stopUpdatingLocationData];
+    [self.activityManager stopActivityUpdates];
+}
+
 #pragma mark - Private Methods
 
 - (void)updateDetectionForActivity:(CMMotionActivity *)activity
@@ -78,6 +92,7 @@
 
 - (void)startUpdatingLocationData
 {
+    _detectingLocation = YES;
     [self.locationManager startUpdatingLocation];
     
     if ([self.delegate respondsToSelector:@selector(driveDetectorStoppedUpdatingLocations)])
@@ -86,10 +101,26 @@
 
 - (void)stopUpdatingLocationData
 {
+    _detectingLocation = NO;
     [self.locationManager startUpdatingLocation];
     
     if ([self.delegate respondsToSelector:@selector(driveDetectorBeganUpdatingLocations)])
         [self.delegate driveDetectorBeganUpdatingLocations];
+}
+
+- (void)updateInactivityTimer
+{
+    [self.inactivityTimer invalidate];
+    self.inactivityTimer = nil;
+    self.inactivityTimer = [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(activityFailedToOccurInTime)  userInfo:nil repeats:NO];
+}
+
+- (void)activityFailedToOccurInTime
+{
+    [self.inactivityTimer invalidate];
+    self.inactivityTimer = nil;
+    
+    [self stopDetecting];
 }
 
 #pragma mark - Property Setters/Getters
@@ -108,6 +139,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    [self updateInactivityTimer];
+    
     CLLocation *location = [locations lastObject];
     [self.currentDrive addSpeed:[location speed] withTimeStamp:[location timestamp]];
     
