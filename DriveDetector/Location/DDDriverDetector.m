@@ -9,11 +9,16 @@
 #import "DDDriverDetector.h"
 #import "DDDrive.h"
 @import CoreLocation;
+@import CoreMotion;
 
 @interface DDDriverDetector () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CMMotionActivityManager *activityManager;
 @property (nonatomic, strong) DDDrive *currentDrive;
+@property (nonatomic, strong) CMMotionActivity *currentActivity;
+
+- (void)updateDetectionForActivity:(CMMotionActivity *)activity;
 
 @end
 
@@ -29,6 +34,8 @@
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDelegate:self];
         
+        _activityManager = [[CMMotionActivityManager alloc] init];
+        
         _currentDrive = [[DDDrive alloc] init];
     }
     return self;
@@ -40,10 +47,31 @@
 {
     if ([CLLocationManager locationServicesEnabled])
     {
-        [self.locationManager startUpdatingLocation];
+        if ([CMMotionActivityManager isActivityAvailable])
+            [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMMotionActivity *activity) {
+                [self updateDetectionForActivity:activity];
+            }];
+        else
+            [self.locationManager startUpdatingLocation];
+        
         return YES;
     }
     return NO;
+}
+
+#pragma mark - Private Methods
+
+- (void)updateDetectionForActivity:(CMMotionActivity *)activity
+{
+    if ([activity confidence] == CMMotionActivityConfidenceLow)
+        return;
+    
+    self.currentActivity = activity;
+    
+    if ([activity automotive])
+        [self.locationManager startUpdatingLocation];
+    else
+        [self.locationManager stopUpdatingLocation];
 }
 
 #pragma mark - Property Setters/Getters
