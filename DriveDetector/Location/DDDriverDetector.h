@@ -10,6 +10,9 @@
 
 @interface DDDriverDetector : NSObject
 
+@property (nonatomic, assign, readonly) double averageAcceleration;
+@property (nonatomic, assign, readonly) double averageSpeed;
+
 - (BOOL)startDetecting;
 
 @end

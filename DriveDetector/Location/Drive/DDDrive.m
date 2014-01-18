@@ -14,8 +14,8 @@
     NSTimeInterval _previousTime;
 }
 
-@property (nonatomic, assign) double averageSpeed;
-@property (nonatomic, assign) double averageAcceleration;
+@property (nonatomic, assign, readwrite) double averageSpeed;
+@property (nonatomic, assign, readwrite) double averageAcceleration;
 
 - (void)addAccelerationFromSpeed:(double)sourceSpeed atTime:(NSTimeInterval)time toSpeed:(double)destinationSpeed;
 

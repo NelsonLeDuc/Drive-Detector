@@ -46,6 +46,18 @@
     return NO;
 }
 
+#pragma mark - Property Setters/Getters
+
+- (double)averageAcceleration
+{
+    return [self.currentDrive averageAcceleration];
+}
+
+- (double)averageSpeed
+{
+    return [self.currentDrive averageSpeed];
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

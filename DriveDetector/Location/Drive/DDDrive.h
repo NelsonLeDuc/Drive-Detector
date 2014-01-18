@@ -14,6 +14,9 @@ typedef double CLLocationSpeed;
 
 @interface DDDrive : NSObject
 
+@property (nonatomic, assign, readonly) double averageSpeed;
+@property (nonatomic, assign, readonly) double averageAcceleration;
+
 - (void)addSpeed:(CLLocationSpeed)speed withTimeStamp:(NSDate *)timeStamp;
 
 @end
