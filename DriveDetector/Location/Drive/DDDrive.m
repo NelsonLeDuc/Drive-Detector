@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Nelson LeDuc. All rights reserved.
 //
 
-#import "DDCurrentDrive.h"
+#import "DDDrive.h"
 
-@interface DDCurrentDrive () {
+@interface DDDrive () {
     NSInteger _speedCount, _accelerationCount;
     double _previousSpeed;
     NSTimeInterval _previousTime;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation DDCurrentDrive
+@implementation DDDrive
 
 #pragma mark - Init
 
@@ -30,7 +30,13 @@
     self = [super init];
     if (self)
     {
+        _accelerationCount = 0;
+        _speedCount = 0;
+        _previousSpeed = 0.0;
+        _previousTime = 0.0;
+        
         _averageSpeed = 0.0;
+        _averageAcceleration = 0.0;
     }
     return self;
 }

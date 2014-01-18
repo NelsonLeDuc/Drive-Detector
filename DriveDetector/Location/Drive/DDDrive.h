@@ -12,7 +12,7 @@
 typedef double CLLocationSpeed;
 #endif
 
-@interface DDCurrentDrive : NSObject
+@interface DDDrive : NSObject
 
 - (void)addSpeed:(CLLocationSpeed)speed withTimeStamp:(NSDate *)timeStamp;
 

@@ -7,17 +7,19 @@
 //
 
 #import "DDDriverDetector.h"
-#import "DDCurrentDrive.h"
+#import "DDDrive.h"
 @import CoreLocation;
 
 @interface DDDriverDetector () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) DDCurrentDrive *currentDrive;
+@property (nonatomic, strong) DDDrive *currentDrive;
 
 @end
 
 @implementation DDDriverDetector
+
+#pragma mark - Init
 
 - (instancetype)init
 {
@@ -27,10 +29,12 @@
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDelegate:self];
         
-        _currentDrive = [[DDCurrentDrive alloc] init];
+        _currentDrive = [[DDDrive alloc] init];
     }
     return self;
 }
+
+#pragma mark - Public Methods
 
 - (BOOL)startDetecting
 {
