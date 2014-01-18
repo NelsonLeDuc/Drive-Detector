@@ -7,8 +7,11 @@
 //
 
 #import "DDViewController.h"
+#import "DDDriverDetector.h"
 
 @interface DDViewController ()
+
+@property (nonatomic, strong) DDDriverDetector *detector;
 
 @end
 
@@ -18,6 +21,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.detector = [[DDDriverDetector alloc] init];
+    [self.detector startDetecting];
 }
 
 - (void)didReceiveMemoryWarning
