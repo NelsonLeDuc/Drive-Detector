@@ -39,7 +39,7 @@
     {
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDistanceFilter:5.0];
-        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
         [_locationManager setDelegate:self];
         
         _activityManager = [[CMMotionActivityManager alloc] init];
@@ -157,13 +157,17 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    CLLocation *location = [locations lastObject];
+    
+    if ([location horizontalAccuracy] > 5.0)
+        return;
+    
     [self updateInactivityTimer];
     
-    CLLocation *location = [locations lastObject];
     [self.currentDrive addSpeed:[location speed] withTimeStamp:[location timestamp]];
     
-    if ([self.delegate respondsToSelector:@selector(locationUpdatedOnDriveDetector:)])
-        [self.delegate locationUpdatedOnDriveDetector:self];
+    if ([self.delegate respondsToSelector:@selector(driveDetector:didUpdateToLocation:)])
+        [self.delegate driveDetector:self didUpdateToLocation:location];
 }
 
 @end

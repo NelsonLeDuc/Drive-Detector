@@ -29,11 +29,13 @@
 
 @end
 
+@class CLLocation;
+
 @protocol DDDriveDetectorDelegate <NSObject>
 
 @optional
 - (void)driveDetectorBeganUpdatingLocations;
 - (void)driveDetectorStoppedUpdatingLocations;
-- (void)locationUpdatedOnDriveDetector:(DDDriverDetector *)driveDetector;
+- (void)driveDetector:(DDDriverDetector *)driveDetector didUpdateToLocation:(CLLocation *)location;
 
 @end
