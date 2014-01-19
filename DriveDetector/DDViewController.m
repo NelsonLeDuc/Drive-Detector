@@ -53,11 +53,13 @@
 - (IBAction)restartButtonPressed:(id)sender
 {
     [self.detector restartDrive];
+    [self updateViewLabelsWithDriveDetector:nil];
 }
 
 - (IBAction)motionSegmentControlChanged:(id)sender
 {
     [self.detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
+    [self updateViewLabelsWithDriveDetector:nil];
 }
 
 - (IBAction)trackingSegmentControlChanged:(id)sender
@@ -70,8 +72,8 @@
 - (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driveDetector
 {
     DDDriverDetector *detector = driveDetector;
-    if (!driveDetector)
-        driveDetector = self.detector;
+    if (!detector)
+        detector = self.detector;
 
     [self.speedLabel setText:[NSString stringWithFormat:@"Speed:   %f", detector.averageSpeed]];
     [self.accelerationLabel setText:[NSString stringWithFormat:@"Acceleration: %f", detector.averageAcceleration]];
