@@ -8,10 +8,12 @@
 
 #import "DDDriveController.h"
 #import "DDDriverDetector.h"
+#import "DDDriveStore.h"
 
-@interface DDDriveController ()
+@interface DDDriveController () <DDDriveDetectorControlDelegate>
 
 @property (nonatomic, strong, readwrite) DDDriverDetector *driveDetector;
+@property (nonatomic, strong) DDDriveStore *driveStore;
 
 @end
 
@@ -25,8 +27,18 @@
     if (self)
     {
         _driveDetector = [[DDDriverDetector alloc] init];
+        [_driveDetector setControlDelegate:self];
+        
+        _driveStore = [[DDDriveStore alloc] init];
     }
     return self;
+}
+
+#pragma mark - DDDriveDetectorControlDelegate
+
+- (void)driveDetector:(id<DDDriverDetector>)driveDetector didFinishDrive:(DDDrive *)drive
+{
+    [self.driveStore addDrive:drive];
 }
 
 @end

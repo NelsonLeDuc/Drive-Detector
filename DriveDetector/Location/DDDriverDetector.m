@@ -44,8 +44,6 @@
         
         _activityManager = [[CMMotionActivityManager alloc] init];
         
-        _currentDrive = [[DDDrive alloc] init];
-        
         _detectingLocation = NO;
         _ignoreMotionActivity = NO;
     }
@@ -56,10 +54,10 @@
 
 - (BOOL)startDetecting
 {
-    [self stopDetecting];
-    
     if ([CLLocationManager locationServicesEnabled])
     {
+        _currentDrive = [[DDDrive alloc] init];
+        
         if (!self.ignoreMotionActivity && [CMMotionActivityManager isActivityAvailable])
             [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMMotionActivity *activity) {
                 [self updateDetectionForActivity:activity];
@@ -76,6 +74,11 @@
 {
     [self stopUpdatingLocationData];
     [self.activityManager stopActivityUpdates];
+    
+    if ([self.controlDelegate respondsToSelector:@selector(driveDetector:didFinishDrive:)])
+        [self.controlDelegate driveDetector:self didFinishDrive:self.currentDrive];
+    
+    self.currentDrive = nil;
 }
 
 - (void)restartDrive

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class DDDrive;
+
 @interface DDDriveStore : NSObject
+
+- (void)addDrive:(DDDrive *)drive;
 
 @end

@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @protocol DDDriveDetectorDelegate;
+@protocol DDDriveDetectorControlDelegate;
 
 @protocol DDDriverDetector <NSObject>
 
 @property (nonatomic, weak, readwrite) id<DDDriveDetectorDelegate> delegate;
+@property (nonatomic, weak, readwrite) id<DDDriveDetectorControlDelegate> controlDelegate;
 @property (nonatomic, assign, readwrite) BOOL ignoreMotionActivity;
 
 @property (nonatomic, assign, readonly) double averageAcceleration;
@@ -32,6 +34,7 @@
 @interface DDDriverDetector : NSObject <DDDriverDetector>
 
 @property (nonatomic, weak, readwrite) id<DDDriveDetectorDelegate> delegate;
+@property (nonatomic, weak, readwrite) id<DDDriveDetectorControlDelegate> controlDelegate;
 @property (nonatomic, assign, readwrite) BOOL ignoreMotionActivity;
 
 @property (nonatomic, assign, readonly) double averageAcceleration;
@@ -56,5 +59,14 @@
 - (void)driveDetectorBeganUpdatingLocations;
 - (void)driveDetectorStoppedUpdatingLocations;
 - (void)driveDetector:(id<DDDriverDetector>)driveDetector didUpdateToLocation:(CLLocation *)location;
+
+@end
+
+@class DDDrive;
+
+@protocol DDDriveDetectorControlDelegate<NSObject>
+
+@optional
+- (void)driveDetector:(id<DDDriverDetector>)driveDetector didFinishDrive:(DDDrive *)drive;
 
 @end

@@ -10,4 +10,11 @@
 
 @implementation DDDriveStore
 
+#pragma mark - Public Methods
+
+- (void)addDrive:(DDDrive *)drive
+{
+    
+}
+
 @end
