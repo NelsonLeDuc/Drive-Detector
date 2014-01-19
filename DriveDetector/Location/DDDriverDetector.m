@@ -47,6 +47,7 @@
         _currentDrive = [[DDDrive alloc] init];
         
         _detectingLocation = NO;
+        _ignoreMotionActivity = NO;
     }
     return self;
 }
@@ -55,9 +56,11 @@
 
 - (BOOL)startDetecting
 {
+    [self stopDetecting];
+    
     if ([CLLocationManager locationServicesEnabled])
     {
-        if ([CMMotionActivityManager isActivityAvailable])
+        if (!self.ignoreMotionActivity && [CMMotionActivityManager isActivityAvailable])
             [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMMotionActivity *activity) {
                 [self updateDetectionForActivity:activity];
             }];
@@ -73,6 +76,12 @@
 {
     [self stopUpdatingLocationData];
     [self.activityManager stopActivityUpdates];
+}
+
+- (void)restartDrive
+{
+    self.currentDrive = [[DDDrive alloc] init];
+    [self startDetecting];
 }
 
 #pragma mark - Private Methods
@@ -124,6 +133,15 @@
 }
 
 #pragma mark - Property Setters/Getters
+
+- (void)setIgnoreMotionActivity:(BOOL)ignoreMotionActivity
+{
+    if (_ignoreMotionActivity == ignoreMotionActivity)
+        return;
+    _ignoreMotionActivity = ignoreMotionActivity;
+    
+    [self startDetecting];
+}
 
 - (double)averageAcceleration
 {

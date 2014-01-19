@@ -13,6 +13,8 @@
 @interface DDDriverDetector : NSObject
 
 @property (nonatomic, weak, readwrite) id<DDDriveDetectorDelegate> delegate;
+@property (nonatomic, assign, readwrite) BOOL ignoreMotionActivity;
+
 @property (nonatomic, assign, readonly) double averageAcceleration;
 @property (nonatomic, assign, readonly) double averageSpeed;
 @property (nonatomic, assign, readonly) BOOL detectingLocation;
@@ -23,6 +25,7 @@
  */
 - (BOOL)startDetecting;
 - (void)stopDetecting;
+- (void)restartDrive;
 
 @end
 
