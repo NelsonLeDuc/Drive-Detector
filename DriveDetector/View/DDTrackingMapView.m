@@ -56,6 +56,15 @@
         [self addLocationToArray:location];
 }
 
+- (void)endCurrentLine
+{
+    if ([self.polyline pointCount] < 10)
+        [self.mapView removeOverlay:self.polyline];
+    self.polyline = nil;
+    self.linePositions = [NSArray array];
+    self.lineColor = nil;
+}
+
 #pragma mark - Private Methods
 
 - (void)setUpView
@@ -129,11 +138,7 @@
     CLLocationDistance distance = [location distanceFromLocation:[self.linePositions lastObject]];
     if (distance > 100)
     {
-        if ([self.polyline pointCount] < 10)
-            [self.mapView removeOverlay:self.polyline];
-        self.polyline = nil;
-        self.linePositions = [NSArray array];
-        self.lineColor = nil;
+        [self endCurrentLine];
     }
     
     self.linePositions = [self.linePositions arrayByAddingObject:location];

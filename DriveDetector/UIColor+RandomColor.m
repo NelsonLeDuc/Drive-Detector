@@ -8,7 +8,7 @@
 
 #import "UIColor+RandomColor.h"
 
-#define kDifferenceAmount 10.0
+#define kDifferenceAmount 15.0
 
 @implementation UIColor (RandomColor)
 

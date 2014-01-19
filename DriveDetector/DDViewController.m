@@ -39,6 +39,7 @@
 {
     [self.detector restartDrive];
     [self updateViewLabelsWithDriveDetector:nil];
+    [self.trackingMapView endCurrentLine];
 }
 
 - (IBAction)motionSwitchChanged:(id)sender

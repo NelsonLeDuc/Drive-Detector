@@ -16,5 +16,6 @@
 @property (nonatomic, assign) BOOL manualLocationTracking;
 
 - (void)updateLineLocation:(CLLocation *)location;
+- (void)endCurrentLine;
 
 @end
