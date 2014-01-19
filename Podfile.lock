@@ -1,0 +1,10 @@
+PODS:
+  - JSAUtilityFunctions (0.0.1)
+
+DEPENDENCIES:
+  - JSAUtilityFunctions
+
+SPEC CHECKSUMS:
+  JSAUtilityFunctions: 627397022808812b2e383964e9d7dcbfc4cbf75b
+
+COCOAPODS: 0.25.0

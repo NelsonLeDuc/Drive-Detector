@@ -1,551 +1,1384 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		52E1C0FA188AE4B1006447D3 /* DDDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C0F9188AE4B1006447D3 /* DDDrive.m */; };
-		52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E1C0FF188B73D8006447D3 /* MapKit.framework */; };
-		52E1C106188B91D1006447D3 /* DDDriveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C105188B91D1006447D3 /* DDDriveStore.m */; };
-		52E1C109188B9200006447D3 /* DDDriveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C108188B9200006447D3 /* DDDriveController.m */; };
-		52E1C10D188BCDEF006447D3 /* DDTrackingMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C10C188BCDEF006447D3 /* DDTrackingMapView.m */; };
-		52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */; };
-		52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
-		52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F21888A26D0084E0D2 /* CoreGraphics.framework */; };
-		52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
-		52F294FB1888A26D0084E0D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52F294F91888A26D0084E0D2 /* InfoPlist.strings */; };
-		52F294FD1888A26D0084E0D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F294FC1888A26D0084E0D2 /* main.m */; };
-		52F295011888A26D0084E0D2 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F295001888A26D0084E0D2 /* DDAppDelegate.m */; };
-		52F295041888A26D0084E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F295021888A26D0084E0D2 /* Main.storyboard */; };
-		52F295071888A26D0084E0D2 /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F295061888A26D0084E0D2 /* DDViewController.m */; };
-		52F295091888A26D0084E0D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F295081888A26D0084E0D2 /* Images.xcassets */; };
-		52F295101888A26D0084E0D2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F2950F1888A26D0084E0D2 /* XCTest.framework */; };
-		52F295111888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
-		52F295121888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
-		52F2951A1888A26D0084E0D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52F295181888A26D0084E0D2 /* InfoPlist.strings */; };
-		52F2951C1888A26D0084E0D2 /* DriveDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2951B1888A26D0084E0D2 /* DriveDetectorTests.m */; };
-		52F295271888A2950084E0D2 /* DDDriverDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F295261888A2950084E0D2 /* DDDriverDetector.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		52F295131888A26D0084E0D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52F294E51888A26D0084E0D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52F294EC1888A26D0084E0D2;
-			remoteInfo = DriveDetector;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		52E1C0F8188AE4B1006447D3 /* DDDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDrive.h; sourceTree = "<group>"; };
-		52E1C0F9188AE4B1006447D3 /* DDDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDrive.m; sourceTree = "<group>"; };
-		52E1C0FF188B73D8006447D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		52E1C104188B91D1006447D3 /* DDDriveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriveStore.h; sourceTree = "<group>"; };
-		52E1C105188B91D1006447D3 /* DDDriveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriveStore.m; sourceTree = "<group>"; };
-		52E1C107188B9200006447D3 /* DDDriveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriveController.h; sourceTree = "<group>"; };
-		52E1C108188B9200006447D3 /* DDDriveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriveController.m; sourceTree = "<group>"; };
-		52E1C10B188BCDEF006447D3 /* DDTrackingMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTrackingMapView.h; sourceTree = "<group>"; };
-		52E1C10C188BCDEF006447D3 /* DDTrackingMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTrackingMapView.m; sourceTree = "<group>"; };
-		52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
-		52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
-		52F294ED1888A26D0084E0D2 /* DriveDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52F294F01888A26D0084E0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		52F294F21888A26D0084E0D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		52F294F41888A26D0084E0D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		52F294F81888A26D0084E0D2 /* DriveDetector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DriveDetector-Info.plist"; sourceTree = "<group>"; };
-		52F294FA1888A26D0084E0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		52F294FC1888A26D0084E0D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		52F294FE1888A26D0084E0D2 /* DriveDetector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DriveDetector-Prefix.pch"; sourceTree = "<group>"; };
-		52F294FF1888A26D0084E0D2 /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAppDelegate.h; sourceTree = "<group>"; };
-		52F295001888A26D0084E0D2 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
-		52F295031888A26D0084E0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52F295051888A26D0084E0D2 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
-		52F295061888A26D0084E0D2 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
-		52F295081888A26D0084E0D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		52F2950E1888A26D0084E0D2 /* DriveDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52F2950F1888A26D0084E0D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		52F295171888A26D0084E0D2 /* DriveDetectorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DriveDetectorTests-Info.plist"; sourceTree = "<group>"; };
-		52F295191888A26D0084E0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		52F2951B1888A26D0084E0D2 /* DriveDetectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriveDetectorTests.m; sourceTree = "<group>"; };
-		52F295251888A2950084E0D2 /* DDDriverDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriverDetector.h; sourceTree = "<group>"; };
-		52F295261888A2950084E0D2 /* DDDriverDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriverDetector.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		52F294EA1888A26D0084E0D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */,
-				52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */,
-				52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */,
-				52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52F2950B1888A26D0084E0D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52F295101888A26D0084E0D2 /* XCTest.framework in Frameworks */,
-				52F295121888A26D0084E0D2 /* UIKit.framework in Frameworks */,
-				52F295111888A26D0084E0D2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		52E1C0FB188B1E0D006447D3 /* Drive */ = {
-			isa = PBXGroup;
-			children = (
-				52E1C0F8188AE4B1006447D3 /* DDDrive.h */,
-				52E1C0F9188AE4B1006447D3 /* DDDrive.m */,
-			);
-			path = Drive;
-			sourceTree = "<group>";
-		};
-		52E1C10A188BCDBF006447D3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				52E1C10B188BCDEF006447D3 /* DDTrackingMapView.h */,
-				52E1C10C188BCDEF006447D3 /* DDTrackingMapView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		52F294E41888A26D0084E0D2 = {
-			isa = PBXGroup;
-			children = (
-				52F294F61888A26D0084E0D2 /* DriveDetector */,
-				52F295151888A26D0084E0D2 /* DriveDetectorTests */,
-				52F294EF1888A26D0084E0D2 /* Frameworks */,
-				52F294EE1888A26D0084E0D2 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		52F294EE1888A26D0084E0D2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52F294ED1888A26D0084E0D2 /* DriveDetector.app */,
-				52F2950E1888A26D0084E0D2 /* DriveDetectorTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		52F294EF1888A26D0084E0D2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				52E1C0FF188B73D8006447D3 /* MapKit.framework */,
-				52F294F01888A26D0084E0D2 /* Foundation.framework */,
-				52F294F21888A26D0084E0D2 /* CoreGraphics.framework */,
-				52F294F41888A26D0084E0D2 /* UIKit.framework */,
-				52F2950F1888A26D0084E0D2 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		52F294F61888A26D0084E0D2 /* DriveDetector */ = {
-			isa = PBXGroup;
-			children = (
-				52E1C10A188BCDBF006447D3 /* View */,
-				52F295281888A29B0084E0D2 /* Location */,
-				52F294FF1888A26D0084E0D2 /* DDAppDelegate.h */,
-				52F295001888A26D0084E0D2 /* DDAppDelegate.m */,
-				52F295021888A26D0084E0D2 /* Main.storyboard */,
-				52F295051888A26D0084E0D2 /* DDViewController.h */,
-				52F295061888A26D0084E0D2 /* DDViewController.m */,
-				52F295081888A26D0084E0D2 /* Images.xcassets */,
-				52F294F71888A26D0084E0D2 /* Supporting Files */,
-				52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */,
-				52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */,
-			);
-			path = DriveDetector;
-			sourceTree = "<group>";
-		};
-		52F294F71888A26D0084E0D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				52F294F81888A26D0084E0D2 /* DriveDetector-Info.plist */,
-				52F294F91888A26D0084E0D2 /* InfoPlist.strings */,
-				52F294FC1888A26D0084E0D2 /* main.m */,
-				52F294FE1888A26D0084E0D2 /* DriveDetector-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		52F295151888A26D0084E0D2 /* DriveDetectorTests */ = {
-			isa = PBXGroup;
-			children = (
-				52F2951B1888A26D0084E0D2 /* DriveDetectorTests.m */,
-				52F295161888A26D0084E0D2 /* Supporting Files */,
-			);
-			path = DriveDetectorTests;
-			sourceTree = "<group>";
-		};
-		52F295161888A26D0084E0D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				52F295171888A26D0084E0D2 /* DriveDetectorTests-Info.plist */,
-				52F295181888A26D0084E0D2 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		52F295281888A29B0084E0D2 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				52E1C0FB188B1E0D006447D3 /* Drive */,
-				52F295251888A2950084E0D2 /* DDDriverDetector.h */,
-				52F295261888A2950084E0D2 /* DDDriverDetector.m */,
-				52E1C104188B91D1006447D3 /* DDDriveStore.h */,
-				52E1C105188B91D1006447D3 /* DDDriveStore.m */,
-				52E1C107188B9200006447D3 /* DDDriveController.h */,
-				52E1C108188B9200006447D3 /* DDDriveController.m */,
-			);
-			path = Location;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		52F294EC1888A26D0084E0D2 /* DriveDetector */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52F2951F1888A26D0084E0D2 /* Build configuration list for PBXNativeTarget "DriveDetector" */;
-			buildPhases = (
-				52F294E91888A26D0084E0D2 /* Sources */,
-				52F294EA1888A26D0084E0D2 /* Frameworks */,
-				52F294EB1888A26D0084E0D2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DriveDetector;
-			productName = DriveDetector;
-			productReference = 52F294ED1888A26D0084E0D2 /* DriveDetector.app */;
-			productType = "com.apple.product-type.application";
-		};
-		52F2950D1888A26D0084E0D2 /* DriveDetectorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52F295221888A26D0084E0D2 /* Build configuration list for PBXNativeTarget "DriveDetectorTests" */;
-			buildPhases = (
-				52F2950A1888A26D0084E0D2 /* Sources */,
-				52F2950B1888A26D0084E0D2 /* Frameworks */,
-				52F2950C1888A26D0084E0D2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52F295141888A26D0084E0D2 /* PBXTargetDependency */,
-			);
-			name = DriveDetectorTests;
-			productName = DriveDetectorTests;
-			productReference = 52F2950E1888A26D0084E0D2 /* DriveDetectorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		52F294E51888A26D0084E0D2 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = DD;
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Nelson LeDuc";
-				TargetAttributes = {
-					52F294EC1888A26D0084E0D2 = {
-						SystemCapabilities = {
-							com.apple.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					52F2950D1888A26D0084E0D2 = {
-						TestTargetID = 52F294EC1888A26D0084E0D2;
-					};
-				};
-			};
-			buildConfigurationList = 52F294E81888A26D0084E0D2 /* Build configuration list for PBXProject "DriveDetector" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 52F294E41888A26D0084E0D2;
-			productRefGroup = 52F294EE1888A26D0084E0D2 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				52F294EC1888A26D0084E0D2 /* DriveDetector */,
-				52F2950D1888A26D0084E0D2 /* DriveDetectorTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		52F294EB1888A26D0084E0D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52F295091888A26D0084E0D2 /* Images.xcassets in Resources */,
-				52F294FB1888A26D0084E0D2 /* InfoPlist.strings in Resources */,
-				52F295041888A26D0084E0D2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52F2950C1888A26D0084E0D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52F2951A1888A26D0084E0D2 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		52F294E91888A26D0084E0D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52F295011888A26D0084E0D2 /* DDAppDelegate.m in Sources */,
-				52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */,
-				52E1C0FA188AE4B1006447D3 /* DDDrive.m in Sources */,
-				52E1C10D188BCDEF006447D3 /* DDTrackingMapView.m in Sources */,
-				52E1C106188B91D1006447D3 /* DDDriveStore.m in Sources */,
-				52F295071888A26D0084E0D2 /* DDViewController.m in Sources */,
-				52E1C109188B9200006447D3 /* DDDriveController.m in Sources */,
-				52F294FD1888A26D0084E0D2 /* main.m in Sources */,
-				52F295271888A2950084E0D2 /* DDDriverDetector.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52F2950A1888A26D0084E0D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52F2951C1888A26D0084E0D2 /* DriveDetectorTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		52F295141888A26D0084E0D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 52F294EC1888A26D0084E0D2 /* DriveDetector */;
-			targetProxy = 52F295131888A26D0084E0D2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		52F294F91888A26D0084E0D2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52F294FA1888A26D0084E0D2 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		52F295021888A26D0084E0D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52F295031888A26D0084E0D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		52F295181888A26D0084E0D2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52F295191888A26D0084E0D2 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		52F2951D1888A26D0084E0D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		52F2951E1888A26D0084E0D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		52F295201888A26D0084E0D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DriveDetector/DriveDetector-Prefix.pch";
-				INFOPLIST_FILE = "DriveDetector/DriveDetector-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		52F295211888A26D0084E0D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DriveDetector/DriveDetector-Prefix.pch";
-				INFOPLIST_FILE = "DriveDetector/DriveDetector-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		52F295231888A26D0084E0D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DriveDetector.app/DriveDetector";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DriveDetector/DriveDetector-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DriveDetectorTests/DriveDetectorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		52F295241888A26D0084E0D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DriveDetector.app/DriveDetector";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DriveDetector/DriveDetector-Prefix.pch";
-				INFOPLIST_FILE = "DriveDetectorTests/DriveDetectorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		52F294E81888A26D0084E0D2 /* Build configuration list for PBXProject "DriveDetector" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52F2951D1888A26D0084E0D2 /* Debug */,
-				52F2951E1888A26D0084E0D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52F2951F1888A26D0084E0D2 /* Build configuration list for PBXNativeTarget "DriveDetector" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52F295201888A26D0084E0D2 /* Debug */,
-				52F295211888A26D0084E0D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52F295221888A26D0084E0D2 /* Build configuration list for PBXNativeTarget "DriveDetectorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52F295231888A26D0084E0D2 /* Debug */,
-				52F295241888A26D0084E0D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 52F294E51888A26D0084E0D2 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>164999F5EF6B40BBBE91CDDF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2FACC3B1132B4BA2BFC03787</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E79971065F354D86AED98913</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52E1C0F8188AE4B1006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDDrive.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C0F9188AE4B1006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDDrive.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C0FA188AE4B1006447D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52E1C0F9188AE4B1006447D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52E1C0FB188B1E0D006447D3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52E1C0F8188AE4B1006447D3</string>
+				<string>52E1C0F9188AE4B1006447D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Drive</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C0FF188B73D8006447D3</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MapKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MapKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>52E1C100188B73D8006447D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52E1C0FF188B73D8006447D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52E1C104188B91D1006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDDriveStore.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C105188B91D1006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDDriveStore.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C106188B91D1006447D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52E1C105188B91D1006447D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52E1C107188B9200006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDDriveController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C108188B9200006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDDriveController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C109188B9200006447D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52E1C108188B9200006447D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52E1C10A188BCDBF006447D3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52E1C10B188BCDEF006447D3</string>
+				<string>52E1C10C188BCDEF006447D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C10B188BCDEF006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDTrackingMapView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C10C188BCDEF006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDTrackingMapView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C10D188BCDEF006447D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52E1C10C188BCDEF006447D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52E1C10E188BDE0B006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>UIColor+RandomColor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C10F188BDE0B006447D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>UIColor+RandomColor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52E1C110188BDE0B006447D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52E1C10F188BDE0B006447D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F294E41888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F294F61888A26D0084E0D2</string>
+				<string>52F295151888A26D0084E0D2</string>
+				<string>52F294EF1888A26D0084E0D2</string>
+				<string>52F294EE1888A26D0084E0D2</string>
+				<string>164999F5EF6B40BBBE91CDDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294E51888A26D0084E0D2</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>DD</string>
+				<key>LastUpgradeCheck</key>
+				<string>0500</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Nelson LeDuc</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>52F294EC1888A26D0084E0D2</key>
+					<dict>
+						<key>SystemCapabilities</key>
+						<dict>
+							<key>com.apple.iOS</key>
+							<dict>
+								<key>enabled</key>
+								<string>1</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>52F2950D1888A26D0084E0D2</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>52F294EC1888A26D0084E0D2</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>52F294E81888A26D0084E0D2</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>52F294E41888A26D0084E0D2</string>
+			<key>productRefGroup</key>
+			<string>52F294EE1888A26D0084E0D2</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>52F294EC1888A26D0084E0D2</string>
+				<string>52F2950D1888A26D0084E0D2</string>
+			</array>
+		</dict>
+		<key>52F294E81888A26D0084E0D2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>52F2951D1888A26D0084E0D2</string>
+				<string>52F2951E1888A26D0084E0D2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>52F294E91888A26D0084E0D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>52F295011888A26D0084E0D2</string>
+				<string>52E1C110188BDE0B006447D3</string>
+				<string>52E1C0FA188AE4B1006447D3</string>
+				<string>52E1C10D188BCDEF006447D3</string>
+				<string>52E1C106188B91D1006447D3</string>
+				<string>52F295071888A26D0084E0D2</string>
+				<string>52E1C109188B9200006447D3</string>
+				<string>52F294FD1888A26D0084E0D2</string>
+				<string>52F295271888A2950084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>52F294EA1888A26D0084E0D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>52F294F31888A26D0084E0D2</string>
+				<string>52F294F51888A26D0084E0D2</string>
+				<string>52E1C100188B73D8006447D3</string>
+				<string>52F294F11888A26D0084E0D2</string>
+				<string>2FACC3B1132B4BA2BFC03787</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>52F294EB1888A26D0084E0D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>52F295091888A26D0084E0D2</string>
+				<string>52F294FB1888A26D0084E0D2</string>
+				<string>52F295041888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>52F294EC1888A26D0084E0D2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>52F2951F1888A26D0084E0D2</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8E7D8C0FE99E458B995C8D73</string>
+				<string>52F294E91888A26D0084E0D2</string>
+				<string>52F294EA1888A26D0084E0D2</string>
+				<string>52F294EB1888A26D0084E0D2</string>
+				<string>ADA67ADB416E472A8CDD8A9A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>DriveDetector</string>
+			<key>productName</key>
+			<string>DriveDetector</string>
+			<key>productReference</key>
+			<string>52F294ED1888A26D0084E0D2</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>52F294ED1888A26D0084E0D2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>DriveDetector.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>52F294EE1888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F294ED1888A26D0084E0D2</string>
+				<string>52F2950E1888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294EF1888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52E1C0FF188B73D8006447D3</string>
+				<string>52F294F01888A26D0084E0D2</string>
+				<string>52F294F21888A26D0084E0D2</string>
+				<string>52F294F41888A26D0084E0D2</string>
+				<string>52F2950F1888A26D0084E0D2</string>
+				<string>E79971065F354D86AED98913</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294F01888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>52F294F11888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294F01888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F294F21888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>52F294F31888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294F21888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F294F41888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>52F294F51888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294F41888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F294F61888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52E1C10A188BCDBF006447D3</string>
+				<string>52F295281888A29B0084E0D2</string>
+				<string>52F294FF1888A26D0084E0D2</string>
+				<string>52F295001888A26D0084E0D2</string>
+				<string>52F295021888A26D0084E0D2</string>
+				<string>52F295051888A26D0084E0D2</string>
+				<string>52F295061888A26D0084E0D2</string>
+				<string>52F295081888A26D0084E0D2</string>
+				<string>52F294F71888A26D0084E0D2</string>
+				<string>52E1C10E188BDE0B006447D3</string>
+				<string>52E1C10F188BDE0B006447D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>DriveDetector</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294F71888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F294F81888A26D0084E0D2</string>
+				<string>52F294F91888A26D0084E0D2</string>
+				<string>52F294FC1888A26D0084E0D2</string>
+				<string>52F294FE1888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294F81888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>DriveDetector-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294F91888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F294FA1888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294FA1888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294FB1888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294F91888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F294FC1888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294FD1888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294FC1888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F294FE1888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DriveDetector-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F294FF1888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295001888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295011888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F295001888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295021888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F295031888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295031888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295041888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F295021888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295051888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295061888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295071888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F295061888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295081888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295091888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F295081888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F2950A1888A26D0084E0D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>52F2951C1888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>52F2950B1888A26D0084E0D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>52F295101888A26D0084E0D2</string>
+				<string>52F295121888A26D0084E0D2</string>
+				<string>52F295111888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>52F2950C1888A26D0084E0D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>52F2951A1888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>52F2950D1888A26D0084E0D2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>52F295221888A26D0084E0D2</string>
+			<key>buildPhases</key>
+			<array>
+				<string>52F2950A1888A26D0084E0D2</string>
+				<string>52F2950B1888A26D0084E0D2</string>
+				<string>52F2950C1888A26D0084E0D2</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>52F295141888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>DriveDetectorTests</string>
+			<key>productName</key>
+			<string>DriveDetectorTests</string>
+			<key>productReference</key>
+			<string>52F2950E1888A26D0084E0D2</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>52F2950E1888A26D0084E0D2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>DriveDetectorTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>52F2950F1888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>52F295101888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F2950F1888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295111888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294F01888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295121888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F294F41888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295131888A26D0084E0D2</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>52F294E51888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>52F294EC1888A26D0084E0D2</string>
+			<key>remoteInfo</key>
+			<string>DriveDetector</string>
+		</dict>
+		<key>52F295141888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>52F294EC1888A26D0084E0D2</string>
+			<key>targetProxy</key>
+			<string>52F295131888A26D0084E0D2</string>
+		</dict>
+		<key>52F295151888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F2951B1888A26D0084E0D2</string>
+				<string>52F295161888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>DriveDetectorTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295161888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F295171888A26D0084E0D2</string>
+				<string>52F295181888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295171888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>DriveDetectorTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295181888A26D0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52F295191888A26D0084E0D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295191888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F2951A1888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F295181888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F2951B1888A26D0084E0D2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DriveDetectorTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F2951C1888A26D0084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F2951B1888A26D0084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F2951D1888A26D0084E0D2</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>52F2951E1888A26D0084E0D2</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>52F2951F1888A26D0084E0D2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>52F295201888A26D0084E0D2</string>
+				<string>52F295211888A26D0084E0D2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>52F295201888A26D0084E0D2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>164999F5EF6B40BBBE91CDDF</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>DriveDetector/DriveDetector-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>DriveDetector/DriveDetector-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>52F295211888A26D0084E0D2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>164999F5EF6B40BBBE91CDDF</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>DriveDetector/DriveDetector-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>DriveDetector/DriveDetector-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>52F295221888A26D0084E0D2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>52F295231888A26D0084E0D2</string>
+				<string>52F295241888A26D0084E0D2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>52F295231888A26D0084E0D2</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/DriveDetector.app/DriveDetector</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>DriveDetector/DriveDetector-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>DriveDetectorTests/DriveDetectorTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>52F295241888A26D0084E0D2</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/DriveDetector.app/DriveDetector</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>DriveDetector/DriveDetector-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>DriveDetectorTests/DriveDetectorTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>52F295251888A2950084E0D2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DDDriverDetector.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295261888A2950084E0D2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DDDriverDetector.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52F295271888A2950084E0D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52F295261888A2950084E0D2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>52F295281888A29B0084E0D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52E1C0FB188B1E0D006447D3</string>
+				<string>52F295251888A2950084E0D2</string>
+				<string>52F295261888A2950084E0D2</string>
+				<string>52E1C104188B91D1006447D3</string>
+				<string>52E1C105188B91D1006447D3</string>
+				<string>52E1C107188B9200006447D3</string>
+				<string>52E1C108188B9200006447D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Location</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E7D8C0FE99E458B995C8D73</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>ADA67ADB416E472A8CDD8A9A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E79971065F354D86AED98913</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>52F294E51888A26D0084E0D2</string>
+</dict>
+</plist>
