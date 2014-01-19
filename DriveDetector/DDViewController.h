@@ -8,14 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class MKMapView;
+
 @interface DDViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *accelerationLabel;
 @property (nonatomic, weak) IBOutlet UILabel *speedLabel;
 @property (nonatomic, weak) IBOutlet UILabel *detectingLabel;
-@property (nonatomic, weak) IBOutlet UISegmentedControl *segmentControl;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *motionSegmentControl;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *trackingSegmentControl;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 - (IBAction)restartButtonPressed:(id)sender;
-- (IBAction)segmentControlChanged:(id)sender;
+- (IBAction)motionSegmentControlChanged:(id)sender;
+- (IBAction)trackingSegmentControlChanged:(id)sender;
 
 @end

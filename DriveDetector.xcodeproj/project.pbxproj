@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52E1C0FA188AE4B1006447D3 /* DDDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C0F9188AE4B1006447D3 /* DDDrive.m */; };
+		52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E1C0FF188B73D8006447D3 /* MapKit.framework */; };
 		52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
 		52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F21888A26D0084E0D2 /* CoreGraphics.framework */; };
 		52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		52E1C0F8188AE4B1006447D3 /* DDDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDrive.h; sourceTree = "<group>"; };
 		52E1C0F9188AE4B1006447D3 /* DDDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDrive.m; sourceTree = "<group>"; };
+		52E1C0FF188B73D8006447D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52F294ED1888A26D0084E0D2 /* DriveDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F294F01888A26D0084E0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52F294F21888A26D0084E0D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +70,7 @@
 			files = (
 				52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */,
 				52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */,
+				52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */,
 				52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		52F294EF1888A26D0084E0D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52E1C0FF188B73D8006447D3 /* MapKit.framework */,
 				52F294F01888A26D0084E0D2 /* Foundation.framework */,
 				52F294F21888A26D0084E0D2 /* CoreGraphics.framework */,
 				52F294F41888A26D0084E0D2 /* UIKit.framework */,
@@ -226,6 +230,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nelson LeDuc";
 				TargetAttributes = {
+					52F294EC1888A26D0084E0D2 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					52F2950D1888A26D0084E0D2 = {
 						TestTargetID = 52F294EC1888A26D0084E0D2;
 					};
@@ -410,6 +421,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DriveDetector/DriveDetector-Prefix.pch";
 				INFOPLIST_FILE = "DriveDetector/DriveDetector-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -423,6 +435,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DriveDetector/DriveDetector-Prefix.pch";
 				INFOPLIST_FILE = "DriveDetector/DriveDetector-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -8,12 +8,19 @@
 
 #import "DDViewController.h"
 #import "DDDriverDetector.h"
+@import MapKit;
 
-@interface DDViewController () <DDDriveDetectorDelegate>
+@interface DDViewController () <DDDriveDetectorDelegate, MKMapViewDelegate> {
+    BOOL _trackingUser;
+}
 
 @property (nonatomic, strong) DDDriverDetector *detector;
+@property (nonatomic, strong) NSArray *linePosition;
+@property (nonatomic, strong) MKPolyline *polyline;
 
 - (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driveDetector;
+- (void)addLocationToArray:(CLLocation *)location;
+- (void)updateMapViewWithTracking:(NSNumber *)trackingNumber;
 
 @end
 
@@ -25,14 +32,20 @@
 {
     [super viewDidLoad];
     
-    [self.segmentControl setSelectedSegmentIndex:0];
+    self.linePosition = [NSArray array];
+    
+    [self.motionSegmentControl setSelectedSegmentIndex:0];
+    [self.trackingSegmentControl setSelectedSegmentIndex:0];
     
     self.detector = [[DDDriverDetector alloc] init];
-    [self.detector setIgnoreMotionActivity:([self.segmentControl selectedSegmentIndex] == 1)];
+    [self.detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
     [self.detector setDelegate:self];
     [self.detector startDetecting];
     
     [self updateViewLabelsWithDriveDetector:nil];
+    [self.mapView setDelegate:self];
+    
+    _trackingUser = NO;
 }
 
 #pragma mark - IBOutlets
@@ -42,9 +55,14 @@
     [self.detector restartDrive];
 }
 
-- (IBAction)segmentControlChanged:(id)sender
+- (IBAction)motionSegmentControlChanged:(id)sender
 {
-    [self.detector setIgnoreMotionActivity:([self.segmentControl selectedSegmentIndex] == 1)];
+    [self.detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
+}
+
+- (IBAction)trackingSegmentControlChanged:(id)sender
+{
+    [self updateMapViewWithTracking:[NSNumber numberWithBool:([self.trackingSegmentControl selectedSegmentIndex] == 0)]];
 }
 
 #pragma mark - Private Methods
@@ -61,6 +79,29 @@
     [self.detectingLabel setText:detectingString];
 }
 
+- (void)addLocationToArray:(CLLocation *)location
+{
+    self.linePosition = [self.linePosition arrayByAddingObject:location];
+    CLLocationCoordinate2D* coordinates = malloc([self.linePosition count] * sizeof(CLLocationCoordinate2D));
+    for (NSInteger i = 0; i < [self.linePosition count]; i++)
+    {
+        CLLocation *location = [self.linePosition objectAtIndex:i];
+        coordinates[i] = [location coordinate];
+    }
+    [self.mapView removeOverlay:self.polyline];
+    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:[self.linePosition count]];
+    [self.mapView addOverlay:self.polyline];
+}
+
+- (void)updateMapViewWithTracking:(NSNumber *)trackingNumber
+{
+    BOOL tracking = [trackingNumber boolValue];
+    MKUserTrackingMode trackingMode = tracking ? MKUserTrackingModeFollowWithHeading : MKUserTrackingModeNone;
+    [self.mapView setUserTrackingMode:trackingMode];
+    [self.mapView setScrollEnabled:!tracking];
+    [self.mapView setZoomEnabled:!tracking];
+}
+
 #pragma mark - DDDriveDetectorDelegate
 
 - (void)driveDetectorBeganUpdatingLocations
@@ -73,9 +114,34 @@
     [self updateViewLabelsWithDriveDetector:nil];
 }
 
-- (void)locationUpdatedOnDriveDetector:(DDDriverDetector *)driveDetector
+- (void)driveDetector:(DDDriverDetector *)driveDetector didUpdateToLocation:(CLLocation *)location
 {
     [self updateViewLabelsWithDriveDetector:driveDetector];
+    [self addLocationToArray:location];
+}
+
+#pragma mark - MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    if (_trackingUser)
+        return;
+    
+    _trackingUser = YES;
+    [self updateMapViewWithTracking:@(YES)];
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+    [renderer setStrokeColor:[UIColor blueColor]];
+    [renderer setLineWidth:2];
+    return renderer;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
