@@ -99,9 +99,8 @@
 {
     BOOL tracking = [trackingNumber boolValue];
     MKUserTrackingMode trackingMode = tracking ? MKUserTrackingModeFollowWithHeading : MKUserTrackingModeNone;
-    [self.mapView setUserTrackingMode:trackingMode];
+    [self.mapView setUserTrackingMode:trackingMode animated:YES];
     [self.mapView setScrollEnabled:!tracking];
-    [self.mapView setZoomEnabled:!tracking];
 }
 
 #pragma mark - DDDriveDetectorDelegate
