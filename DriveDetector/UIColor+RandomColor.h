@@ -11,5 +11,12 @@
 @interface UIColor (RandomColor)
 
 + (UIColor *)randomColor;
++ (UIColor *)randomColorDislike:(UIColor *)color;
+
+@end
+
+@interface UIColor (ConvenienceColor)
+
++ (UIColor *)colorWithIntegersRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(NSInteger)alpha;
 
 @end

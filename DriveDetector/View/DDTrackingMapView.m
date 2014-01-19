@@ -113,7 +113,7 @@
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
     if (!self.lineColor)
-        self.lineColor = [UIColor randomColor];
+        self.lineColor = [UIColor randomColorDislike:[UIColor colorWithIntegersRed:251 green:211 blue:40 alpha:255]];
     
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
     [renderer setStrokeColor:self.lineColor];
