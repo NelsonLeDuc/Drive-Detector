@@ -10,7 +10,26 @@
 
 @protocol DDDriveDetectorDelegate;
 
-@interface DDDriverDetector : NSObject
+@protocol DDDriverDetector <NSObject>
+
+@property (nonatomic, weak, readwrite) id<DDDriveDetectorDelegate> delegate;
+@property (nonatomic, assign, readwrite) BOOL ignoreMotionActivity;
+
+@property (nonatomic, assign, readonly) double averageAcceleration;
+@property (nonatomic, assign, readonly) double averageSpeed;
+@property (nonatomic, assign, readonly) BOOL detectingLocation;
+
+/** Begins updating location activity. If motion activity is available the detector will only detect their location when it can be sure that the user is driving in a car.
+ 
+ @return Returns whether or not the detector was able to start, for example when a user has location data disabled or rejects this app from using it it will return a NO.
+ */
+- (BOOL)startDetecting;
+- (void)stopDetecting;
+- (void)restartDrive;
+
+@end
+
+@interface DDDriverDetector : NSObject <DDDriverDetector>
 
 @property (nonatomic, weak, readwrite) id<DDDriveDetectorDelegate> delegate;
 @property (nonatomic, assign, readwrite) BOOL ignoreMotionActivity;
@@ -36,6 +55,6 @@
 @optional
 - (void)driveDetectorBeganUpdatingLocations;
 - (void)driveDetectorStoppedUpdatingLocations;
-- (void)driveDetector:(DDDriverDetector *)driveDetector didUpdateToLocation:(CLLocation *)location;
+- (void)driveDetector:(id<DDDriverDetector>)driveDetector didUpdateToLocation:(CLLocation *)location;
 
 @end

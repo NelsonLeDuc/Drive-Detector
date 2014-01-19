@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class DDDriverDetector;
+@protocol DDDriverDetector;
 
 @interface DDDriveController : NSObject
 
-@property (nonatomic, strong, readonly) DDDriverDetector *driveDetector;
+@property (nonatomic, strong, readonly) id<DDDriverDetector> driveDetector;
 
 @end

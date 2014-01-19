@@ -14,11 +14,11 @@
     BOOL _trackingUser;
 }
 
-@property (nonatomic, strong) DDDriverDetector *detector;
+@property (nonatomic, strong) id<DDDriverDetector> detector;
 @property (nonatomic, strong) NSArray *linePosition;
 @property (nonatomic, strong) MKPolyline *polyline;
 
-- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driverDetector;
+- (void)updateViewLabelsWithDriveDetector:(id<DDDriverDetector>)driverDetector;
 - (void)addLocationToArray:(CLLocation *)location;
 - (void)updateMapViewWithTracking:(NSNumber *)trackingNumber;
 
@@ -64,7 +64,7 @@
 
 #pragma mark - Ovveride Setters/Getters
 
-- (void)setDetector:(DDDriverDetector *)detector
+- (void)setDetector:(id<DDDriverDetector>)detector
 {
     if (_detector)
         return;
@@ -80,9 +80,9 @@
 
 #pragma mark - Private Methods
 
-- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driverDetector
+- (void)updateViewLabelsWithDriveDetector:(id<DDDriverDetector>)driverDetector
 {
-    DDDriverDetector *detector = driverDetector;
+    id<DDDriverDetector> detector = driverDetector;
     if (!detector)
         detector = self.detector;
 
@@ -126,7 +126,7 @@
     [self updateViewLabelsWithDriveDetector:nil];
 }
 
-- (void)driveDetector:(DDDriverDetector *)driveDetector didUpdateToLocation:(CLLocation *)location
+- (void)driveDetector:(id<DDDriverDetector>)driveDetector didUpdateToLocation:(CLLocation *)location
 {
     [self updateViewLabelsWithDriveDetector:driveDetector];
     [self addLocationToArray:location];
@@ -147,7 +147,7 @@
 {
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
     [renderer setStrokeColor:[UIColor blueColor]];
-    [renderer setLineWidth:2];
+    [renderer setLineWidth:3];
     return renderer;
 }
 
