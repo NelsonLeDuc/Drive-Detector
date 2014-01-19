@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSArray *linePosition;
 @property (nonatomic, strong) MKPolyline *polyline;
 
-- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driveDetector;
+- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driverDetector;
 - (void)addLocationToArray:(CLLocation *)location;
 - (void)updateMapViewWithTracking:(NSNumber *)trackingNumber;
 
@@ -36,11 +36,6 @@
     
     [self.motionSegmentControl setSelectedSegmentIndex:0];
     [self.trackingSegmentControl setSelectedSegmentIndex:0];
-    
-    self.detector = [[DDDriverDetector alloc] init];
-    [self.detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
-    [self.detector setDelegate:self];
-    [self.detector startDetecting];
     
     [self updateViewLabelsWithDriveDetector:nil];
     [self.mapView setDelegate:self];
@@ -67,11 +62,27 @@
     [self updateMapViewWithTracking:[NSNumber numberWithBool:([self.trackingSegmentControl selectedSegmentIndex] == 0)]];
 }
 
+#pragma mark - Ovveride Setters/Getters
+
+- (void)setDetector:(DDDriverDetector *)detector
+{
+    if (_detector)
+        return;
+    if (_detector == detector)
+        return;
+    
+    _detector = detector;
+    
+    [_detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
+    [_detector setDelegate:self];
+    [_detector startDetecting];
+}
+
 #pragma mark - Private Methods
 
-- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driveDetector
+- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driverDetector
 {
-    DDDriverDetector *detector = driveDetector;
+    DDDriverDetector *detector = driverDetector;
     if (!detector)
         detector = self.detector;
 

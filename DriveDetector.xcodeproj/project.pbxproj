@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		52E1C0FA188AE4B1006447D3 /* DDDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C0F9188AE4B1006447D3 /* DDDrive.m */; };
 		52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E1C0FF188B73D8006447D3 /* MapKit.framework */; };
+		52E1C106188B91D1006447D3 /* DDDriveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C105188B91D1006447D3 /* DDDriveStore.m */; };
+		52E1C109188B9200006447D3 /* DDDriveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C108188B9200006447D3 /* DDDriveController.m */; };
 		52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
 		52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F21888A26D0084E0D2 /* CoreGraphics.framework */; };
 		52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
@@ -40,6 +42,10 @@
 		52E1C0F8188AE4B1006447D3 /* DDDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDrive.h; sourceTree = "<group>"; };
 		52E1C0F9188AE4B1006447D3 /* DDDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDrive.m; sourceTree = "<group>"; };
 		52E1C0FF188B73D8006447D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		52E1C104188B91D1006447D3 /* DDDriveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriveStore.h; sourceTree = "<group>"; };
+		52E1C105188B91D1006447D3 /* DDDriveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriveStore.m; sourceTree = "<group>"; };
+		52E1C107188B9200006447D3 /* DDDriveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriveController.h; sourceTree = "<group>"; };
+		52E1C108188B9200006447D3 /* DDDriveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriveController.m; sourceTree = "<group>"; };
 		52F294ED1888A26D0084E0D2 /* DriveDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F294F01888A26D0084E0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52F294F21888A26D0084E0D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +184,10 @@
 				52E1C0FB188B1E0D006447D3 /* Drive */,
 				52F295251888A2950084E0D2 /* DDDriverDetector.h */,
 				52F295261888A2950084E0D2 /* DDDriverDetector.m */,
+				52E1C104188B91D1006447D3 /* DDDriveStore.h */,
+				52E1C105188B91D1006447D3 /* DDDriveStore.m */,
+				52E1C107188B9200006447D3 /* DDDriveController.h */,
+				52E1C108188B9200006447D3 /* DDDriveController.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -289,7 +299,9 @@
 			files = (
 				52F295011888A26D0084E0D2 /* DDAppDelegate.m in Sources */,
 				52E1C0FA188AE4B1006447D3 /* DDDrive.m in Sources */,
+				52E1C106188B91D1006447D3 /* DDDriveStore.m in Sources */,
 				52F295071888A26D0084E0D2 /* DDViewController.m in Sources */,
+				52E1C109188B9200006447D3 /* DDDriveController.m in Sources */,
 				52F294FD1888A26D0084E0D2 /* main.m in Sources */,
 				52F295271888A2950084E0D2 /* DDDriverDetector.m in Sources */,
 			);

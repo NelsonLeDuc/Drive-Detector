@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class MKMapView;
+@class DDDriverDetector;
 
 @interface DDViewController : UIViewController
 
@@ -22,5 +23,6 @@
 - (IBAction)restartButtonPressed:(id)sender;
 - (IBAction)motionSegmentControlChanged:(id)sender;
 - (IBAction)trackingSegmentControlChanged:(id)sender;
+- (void)setDetector:(DDDriverDetector *)detector;
 
 @end
