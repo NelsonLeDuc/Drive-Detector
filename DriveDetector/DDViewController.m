@@ -11,9 +11,7 @@
 #import "DDTrackingMapView.h"
 @import CoreLocation;
 
-@interface DDViewController () <DDDriveDetectorDelegate> {
-    BOOL _trackingUser;
-}
+@interface DDViewController () <DDDriveDetectorDelegate>
 
 @property (nonatomic, strong) id<DDDriverDetector> detector;
 
@@ -30,9 +28,9 @@
     [super viewDidLoad];
     
     [self updateViewLabelsWithDriveDetector:nil];
-    [self.trackingMapView setManualLocationTracking:YES];
     
-    _trackingUser = NO;
+    [self.trackingMapView setManualLocationTracking:YES];
+    [self.trackingMapView setTrackUser:[self.trackSwitch isOn]];
 }
 
 #pragma mark - IBOutlets

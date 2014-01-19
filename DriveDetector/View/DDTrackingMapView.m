@@ -117,7 +117,7 @@
     
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
     [renderer setStrokeColor:self.lineColor];
-    [renderer setLineWidth:3];
+    [renderer setLineWidth:5];
     return renderer;
 }
 
@@ -129,7 +129,7 @@
     CLLocationDistance distance = [location distanceFromLocation:[self.linePositions lastObject]];
     if (distance > 100)
     {
-        if ([self.polyline pointCount] < 100)
+        if ([self.polyline pointCount] < 10)
             [self.mapView removeOverlay:self.polyline];
         self.polyline = nil;
         self.linePositions = [NSArray array];
