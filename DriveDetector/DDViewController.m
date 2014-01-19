@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) DDDriverDetector *detector;
 
+- (void)updateViewLabelsWithDriveDetector:(DDDriverDetector *)driveDetector;
+
 @end
 
 @implementation DDViewController
@@ -23,9 +25,26 @@
 {
     [super viewDidLoad];
     
+    [self.segmentControl setSelectedSegmentIndex:0];
+    
     self.detector = [[DDDriverDetector alloc] init];
+    [self.detector setIgnoreMotionActivity:([self.segmentControl selectedSegmentIndex] == 1)];
     [self.detector setDelegate:self];
     [self.detector startDetecting];
+    
+    [self updateViewLabelsWithDriveDetector:nil];
+}
+
+#pragma mark - IBOutlets
+
+- (IBAction)restartButtonPressed:(id)sender
+{
+    [self.detector restartDrive];
+}
+
+- (IBAction)segmentControlChanged:(id)sender
+{
+    [self.detector setIgnoreMotionActivity:([self.segmentControl selectedSegmentIndex] == 1)];
 }
 
 #pragma mark - Private Methods

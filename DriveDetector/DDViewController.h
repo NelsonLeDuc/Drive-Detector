@@ -13,5 +13,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *accelerationLabel;
 @property (nonatomic, weak) IBOutlet UILabel *speedLabel;
 @property (nonatomic, weak) IBOutlet UILabel *detectingLabel;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *segmentControl;
+
+- (IBAction)restartButtonPressed:(id)sender;
+- (IBAction)segmentControlChanged:(id)sender;
 
 @end

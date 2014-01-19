@@ -35,20 +35,47 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDF-O2-lcq">
+                                <rect key="frame" x="121" y="253" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="8hJ-sb-qo1"/>
+                                </constraints>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9Sq-Im-1vb"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-Yq-ShZ">
+                                <rect key="frame" x="99" y="291" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Use"/>
+                                    <segment title="Ignore"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Crd-jD-hmA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kDF-O2-lcq" firstAttribute="top" secondItem="HHR-va-EOV" secondAttribute="bottom" constant="8" id="3vL-1p-2d3"/>
                             <constraint firstItem="EyC-iD-nrU" firstAttribute="top" secondItem="4ca-4r-AWL" secondAttribute="bottom" constant="146" id="8N1-fu-LBm"/>
                             <constraint firstAttribute="centerX" secondItem="HHR-va-EOV" secondAttribute="centerX" id="At8-Pj-tEW"/>
                             <constraint firstAttribute="centerX" secondItem="EyC-iD-nrU" secondAttribute="centerX" id="G4k-MP-IAA"/>
                             <constraint firstItem="HHR-va-EOV" firstAttribute="top" secondItem="ft4-Rp-4Id" secondAttribute="bottom" constant="8" id="HhA-bd-ja5"/>
                             <constraint firstItem="ft4-Rp-4Id" firstAttribute="top" secondItem="EyC-iD-nrU" secondAttribute="bottom" constant="8" id="gPB-vb-wZL"/>
                             <constraint firstAttribute="centerX" secondItem="ft4-Rp-4Id" secondAttribute="centerX" id="mTK-BK-4KA"/>
+                            <constraint firstAttribute="centerX" secondItem="kDF-O2-lcq" secondAttribute="centerX" id="rp1-Sv-qFO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="accelerationLabel" destination="ft4-Rp-4Id" id="HcR-ON-dHP"/>
                         <outlet property="detectingLabel" destination="HHR-va-EOV" id="OtY-a8-mce"/>
+                        <outlet property="segmentControl" destination="HvJ-Yq-ShZ" id="Yad-2s-2Ai"/>
                         <outlet property="speedLabel" destination="EyC-iD-nrU" id="jx4-at-8Wn"/>
                     </connections>
                 </viewController>
