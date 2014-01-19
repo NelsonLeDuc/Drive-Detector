@@ -86,8 +86,8 @@
     if (!detector)
         detector = self.detector;
 
-    [self.speedLabel setText:[NSString stringWithFormat:@"Speed:   %f", detector.averageSpeed]];
-    [self.accelerationLabel setText:[NSString stringWithFormat:@"Acceleration: %f", detector.averageAcceleration]];
+    [self.speedLabel setText:[NSString stringWithFormat:@"%f", detector.averageSpeed]];
+    [self.accelerationLabel setText:[NSString stringWithFormat:@"%f", detector.averageAcceleration]];
     NSString *detectingString = [detector detectingLocation] ? @"Detecting locations" : @"Not detecting locations";
     [self.detectingLabel setText:detectingString];
 }
