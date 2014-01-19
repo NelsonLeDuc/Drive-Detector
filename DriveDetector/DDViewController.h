@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MKMapView;
+@class DDTrackingMapView;
 @protocol DDDriverDetector;
 
 @interface DDViewController : UIViewController
@@ -16,13 +16,13 @@
 @property (nonatomic, weak) IBOutlet UILabel *accelerationLabel;
 @property (nonatomic, weak) IBOutlet UILabel *speedLabel;
 @property (nonatomic, weak) IBOutlet UILabel *detectingLabel;
-@property (nonatomic, weak) IBOutlet UISegmentedControl *motionSegmentControl;
-@property (nonatomic, weak) IBOutlet UISegmentedControl *trackingSegmentControl;
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, weak) IBOutlet UISwitch *motionSwitch;
+@property (nonatomic, weak) IBOutlet UISwitch *trackSwitch;
+@property (nonatomic, weak) IBOutlet DDTrackingMapView *trackingMapView;
 
 - (IBAction)restartButtonPressed:(id)sender;
-- (IBAction)motionSegmentControlChanged:(id)sender;
-- (IBAction)trackingSegmentControlChanged:(id)sender;
+- (IBAction)motionSwitchChanged:(id)sender;
+- (IBAction)trackSwitchChanged:(id)sender;
 - (void)setDetector:(id<DDDriverDetector>)detector;
 
 @end

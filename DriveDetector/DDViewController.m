@@ -8,19 +8,16 @@
 
 #import "DDViewController.h"
 #import "DDDriverDetector.h"
-@import MapKit;
+#import "DDTrackingMapView.h"
+@import CoreLocation;
 
-@interface DDViewController () <DDDriveDetectorDelegate, MKMapViewDelegate> {
+@interface DDViewController () <DDDriveDetectorDelegate> {
     BOOL _trackingUser;
 }
 
 @property (nonatomic, strong) id<DDDriverDetector> detector;
-@property (nonatomic, strong) NSArray *linePosition;
-@property (nonatomic, strong) MKPolyline *polyline;
 
 - (void)updateViewLabelsWithDriveDetector:(id<DDDriverDetector>)driverDetector;
-- (void)addLocationToArray:(CLLocation *)location;
-- (void)updateMapViewWithTracking:(NSNumber *)trackingNumber;
 
 @end
 
@@ -32,13 +29,8 @@
 {
     [super viewDidLoad];
     
-    self.linePosition = [NSArray array];
-    
-    [self.motionSegmentControl setSelectedSegmentIndex:0];
-    [self.trackingSegmentControl setSelectedSegmentIndex:0];
-    
     [self updateViewLabelsWithDriveDetector:nil];
-    [self.mapView setDelegate:self];
+    [self.trackingMapView setManualLocationTracking:YES];
     
     _trackingUser = NO;
 }
@@ -51,15 +43,14 @@
     [self updateViewLabelsWithDriveDetector:nil];
 }
 
-- (IBAction)motionSegmentControlChanged:(id)sender
+- (IBAction)motionSwitchChanged:(id)sender
 {
-    [self.detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
-    [self updateViewLabelsWithDriveDetector:nil];
+    [self.detector setIgnoreMotionActivity:![self.motionSwitch isOn]];
 }
 
-- (IBAction)trackingSegmentControlChanged:(id)sender
+- (IBAction)trackSwitchChanged:(id)sender
 {
-    [self updateMapViewWithTracking:[NSNumber numberWithBool:([self.trackingSegmentControl selectedSegmentIndex] == 0)]];
+    [self.trackingMapView setTrackUser:[self.trackSwitch isOn]];
 }
 
 #pragma mark - Ovveride Setters/Getters
@@ -73,7 +64,7 @@
     
     _detector = detector;
     
-    [_detector setIgnoreMotionActivity:([self.motionSegmentControl selectedSegmentIndex] == 1)];
+    [_detector setIgnoreMotionActivity:![self.motionSwitch isOn]];
     [_detector setDelegate:self];
     [_detector startDetecting];
 }
@@ -92,28 +83,6 @@
     [self.detectingLabel setText:detectingString];
 }
 
-- (void)addLocationToArray:(CLLocation *)location
-{
-    self.linePosition = [self.linePosition arrayByAddingObject:location];
-    CLLocationCoordinate2D* coordinates = malloc([self.linePosition count] * sizeof(CLLocationCoordinate2D));
-    for (NSInteger i = 0; i < [self.linePosition count]; i++)
-    {
-        CLLocation *location = [self.linePosition objectAtIndex:i];
-        coordinates[i] = [location coordinate];
-    }
-    [self.mapView removeOverlay:self.polyline];
-    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:[self.linePosition count]];
-    [self.mapView addOverlay:self.polyline];
-}
-
-- (void)updateMapViewWithTracking:(NSNumber *)trackingNumber
-{
-    BOOL tracking = [trackingNumber boolValue];
-    MKUserTrackingMode trackingMode = tracking ? MKUserTrackingModeFollowWithHeading : MKUserTrackingModeNone;
-    [self.mapView setUserTrackingMode:trackingMode animated:YES];
-    [self.mapView setScrollEnabled:!tracking];
-}
-
 #pragma mark - DDDriveDetectorDelegate
 
 - (void)driveDetectorBeganUpdatingLocations
@@ -129,26 +98,7 @@
 - (void)driveDetector:(id<DDDriverDetector>)driveDetector didUpdateToLocation:(CLLocation *)location
 {
     [self updateViewLabelsWithDriveDetector:driveDetector];
-    [self addLocationToArray:location];
-}
-
-#pragma mark - MKMapViewDelegate
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    if (_trackingUser)
-        return;
-    
-    _trackingUser = YES;
-    [self updateMapViewWithTracking:@(YES)];
-}
-
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
-    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
-    [renderer setStrokeColor:[UIColor blueColor]];
-    [renderer setLineWidth:3];
-    return renderer;
+    [self.trackingMapView updateLineLocation:location];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

@@ -11,6 +11,8 @@
 		52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E1C0FF188B73D8006447D3 /* MapKit.framework */; };
 		52E1C106188B91D1006447D3 /* DDDriveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C105188B91D1006447D3 /* DDDriveStore.m */; };
 		52E1C109188B9200006447D3 /* DDDriveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C108188B9200006447D3 /* DDDriveController.m */; };
+		52E1C10D188BCDEF006447D3 /* DDTrackingMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C10C188BCDEF006447D3 /* DDTrackingMapView.m */; };
+		52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */; };
 		52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
 		52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F21888A26D0084E0D2 /* CoreGraphics.framework */; };
 		52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
@@ -46,6 +48,10 @@
 		52E1C105188B91D1006447D3 /* DDDriveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriveStore.m; sourceTree = "<group>"; };
 		52E1C107188B9200006447D3 /* DDDriveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriveController.h; sourceTree = "<group>"; };
 		52E1C108188B9200006447D3 /* DDDriveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriveController.m; sourceTree = "<group>"; };
+		52E1C10B188BCDEF006447D3 /* DDTrackingMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTrackingMapView.h; sourceTree = "<group>"; };
+		52E1C10C188BCDEF006447D3 /* DDTrackingMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTrackingMapView.m; sourceTree = "<group>"; };
+		52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
 		52F294ED1888A26D0084E0D2 /* DriveDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F294F01888A26D0084E0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52F294F21888A26D0084E0D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +109,15 @@
 			path = Drive;
 			sourceTree = "<group>";
 		};
+		52E1C10A188BCDBF006447D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52E1C10B188BCDEF006447D3 /* DDTrackingMapView.h */,
+				52E1C10C188BCDEF006447D3 /* DDTrackingMapView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		52F294E41888A26D0084E0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +152,7 @@
 		52F294F61888A26D0084E0D2 /* DriveDetector */ = {
 			isa = PBXGroup;
 			children = (
+				52E1C10A188BCDBF006447D3 /* View */,
 				52F295281888A29B0084E0D2 /* Location */,
 				52F294FF1888A26D0084E0D2 /* DDAppDelegate.h */,
 				52F295001888A26D0084E0D2 /* DDAppDelegate.m */,
@@ -145,6 +161,8 @@
 				52F295061888A26D0084E0D2 /* DDViewController.m */,
 				52F295081888A26D0084E0D2 /* Images.xcassets */,
 				52F294F71888A26D0084E0D2 /* Supporting Files */,
+				52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */,
+				52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */,
 			);
 			path = DriveDetector;
 			sourceTree = "<group>";
@@ -298,7 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F295011888A26D0084E0D2 /* DDAppDelegate.m in Sources */,
+				52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */,
 				52E1C0FA188AE4B1006447D3 /* DDDrive.m in Sources */,
+				52E1C10D188BCDEF006447D3 /* DDTrackingMapView.m in Sources */,
 				52E1C106188B91D1006447D3 /* DDDriveStore.m in Sources */,
 				52F295071888A26D0084E0D2 /* DDViewController.m in Sources */,
 				52E1C109188B9200006447D3 /* DDDriveController.m in Sources */,
