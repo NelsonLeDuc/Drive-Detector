@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class MainViewController: UIViewController, DDDriveDetectorDelegate
+class MainViewController: UIViewController, DriveDetectorDelegate
 {
     @IBOutlet var accelerationLabel: UILabel!
     @IBOutlet var speedLabel: UILabel!
@@ -18,7 +18,7 @@ class MainViewController: UIViewController, DDDriveDetectorDelegate
     @IBOutlet var trackSwitch: UISwitch!
     @IBOutlet var trackingMapView: TrackingMapView!
     
-    private var detector: DDDriverDetectorProtocol?
+    var detector: DriveDetector?
     
     //MARK: - View Lifecycle
     override func viewDidLoad()
@@ -29,6 +29,10 @@ class MainViewController: UIViewController, DDDriveDetectorDelegate
         
         self.trackingMapView.manualLocationTracking = true
         self.trackingMapView.trackUser = self.trackSwitch.on
+        
+        self.detector?.delegate = self
+        self.detector?.ignoreMotionActivity = self.motionSwitch.on
+        self.detector?.startDetecting()
     }
 
     //MARK: - IBAction
@@ -49,12 +53,12 @@ class MainViewController: UIViewController, DDDriveDetectorDelegate
         self.trackingMapView.trackUser = self.trackSwitch.on
     }
     
-    func setDetector(detector: DDDriverDetectorProtocol)
-    {
-        detector.ignoreMotionActivity = self.motionSwitch.on
-        detector.delegate = self
-        detector.startDetecting()
-    }
+//    func setDetector(detector: DriveDetector)
+//    {
+//        detector.ignoreMotionActivity = self.motionSwitch.on
+//        detector.delegate = self
+//        detector.startDetecting()
+//    }
     
     //MARK: - DDDriveDetectorDelegate
     func driveDetectorBeganUpdatingLocations()
@@ -67,7 +71,7 @@ class MainViewController: UIViewController, DDDriveDetectorDelegate
         self.updateViewLabelsWithDriverDetector(self.detector)
     }
     
-    func driveDetector(driveDetector: DDDriverDetectorProtocol!, didUpdateToLocation location: CLLocation!)
+    func driveDetector(driveDetector: DriveDetector!, didUpdateToLocation location: CLLocation!)
     {
         self.updateViewLabelsWithDriverDetector(self.detector)
         self.trackingMapView.updateLineLocation(location)
@@ -80,7 +84,7 @@ class MainViewController: UIViewController, DDDriveDetectorDelegate
     }
     
     //MARK: - Private Methods
-    func updateViewLabelsWithDriverDetector(driverDetector: DDDriverDetectorProtocol?)
+    func updateViewLabelsWithDriverDetector(driverDetector: DriveDetector?)
     {
         var string = "Not detecting locations"
         if let detector = driverDetector

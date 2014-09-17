@@ -8,14 +8,14 @@
 
 import UIKit
 
-class DriveController: NSObject, DDDriveDetectorControlDelegate
+class DriveController: NSObject, DriveDetectorControlDelegate
 {
-    let driveDetector: DDDriverDetector
+    let driveDetector: DriveDetector
     private let driveStore: DriveStore
     
     override init()
     {
-        self.driveDetector = DDDriverDetector()
+        self.driveDetector = DriveDetector()
         self.driveStore = DriveStore()
         super.init()
         
@@ -23,9 +23,12 @@ class DriveController: NSObject, DDDriveDetectorControlDelegate
     }
     
     //MARK: - DDDriveDetectorControlDelegate
-    func driveDetector(driveDetector: DDDriverDetectorProtocol!, didFinishDrive drive: Drive!)
+    func driveDetector(driveDetector: DriveDetector, didFinishDrive drive: Drive?)
     {
-        self.driveStore.addDrive(drive)
+        if let finishedDrive = drive
+        {
+            self.driveStore.addDrive(finishedDrive)
+        }
     }
     
 }

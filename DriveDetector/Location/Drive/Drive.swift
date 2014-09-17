@@ -37,7 +37,7 @@ class Drive: NSObject
             return
         }
         
-        self.addAccelerationFromSpeed(self.previousTime, atTime: timeStamp.timeIntervalSince1970, toSpeed: speed)
+        self.addAccelerationFromSpeed(self.previousSpeed, atTime: timeStamp.timeIntervalSince1970, toSpeed: speed)
         self.previousSpeed = speed
         
         var calculatedSum = Double(self.speedCount) * self.averageSpeed

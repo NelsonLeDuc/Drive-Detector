@@ -20,7 +20,7 @@ class DDAppDelegate: UIResponder, UIApplicationDelegate
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var driveViewController = storyboard.instantiateInitialViewController() as MainViewController
-//        driveViewController.setDetector(self.driveController.driveDetector)
+        driveViewController.detector = self.driveController.driveDetector
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = driveViewController

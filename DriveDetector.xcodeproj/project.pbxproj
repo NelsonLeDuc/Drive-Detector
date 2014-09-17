@@ -14,6 +14,7 @@
 		39F5457119C9000E00FEADFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5457019C9000E00FEADFB /* MainViewController.swift */; };
 		39F5457319C90C7A00FEADFB /* TrackingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5457219C90C7A00FEADFB /* TrackingMapView.swift */; };
 		39F5457519C9178A00FEADFB /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5457419C9178A00FEADFB /* Drive.swift */; };
+		39F5457719C95E5000FEADFB /* DriveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5457619C95E5000FEADFB /* DriveDetector.swift */; };
 		52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E1C0FF188B73D8006447D3 /* MapKit.framework */; };
 		52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */; };
 		52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
@@ -27,7 +28,6 @@
 		52F295121888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
 		52F2951A1888A26D0084E0D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52F295181888A26D0084E0D2 /* InfoPlist.strings */; };
 		52F2951C1888A26D0084E0D2 /* DriveDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2951B1888A26D0084E0D2 /* DriveDetectorTests.m */; };
-		52F295271888A2950084E0D2 /* DDDriverDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F295261888A2950084E0D2 /* DDDriverDetector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,7 @@
 		39F5457019C9000E00FEADFB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		39F5457219C90C7A00FEADFB /* TrackingMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingMapView.swift; sourceTree = "<group>"; };
 		39F5457419C9178A00FEADFB /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
+		39F5457619C95E5000FEADFB /* DriveDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDetector.swift; sourceTree = "<group>"; };
 		52E1C0FF188B73D8006447D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
@@ -66,8 +67,6 @@
 		52F295171888A26D0084E0D2 /* DriveDetectorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DriveDetectorTests-Info.plist"; sourceTree = "<group>"; };
 		52F295191888A26D0084E0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52F2951B1888A26D0084E0D2 /* DriveDetectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriveDetectorTests.m; sourceTree = "<group>"; };
-		52F295251888A2950084E0D2 /* DDDriverDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDriverDetector.h; sourceTree = "<group>"; };
-		52F295261888A2950084E0D2 /* DDDriverDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDriverDetector.m; sourceTree = "<group>"; };
 		E79971065F354D86AED98913 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,8 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				52E1C0FB188B1E0D006447D3 /* Drive */,
-				52F295251888A2950084E0D2 /* DDDriverDetector.h */,
-				52F295261888A2950084E0D2 /* DDDriverDetector.m */,
+				39F5457619C95E5000FEADFB /* DriveDetector.swift */,
 				39F5456E19C8FF8400FEADFB /* DriveStore.swift */,
 				39F5456C19C8FBE300FEADFB /* DriveController.swift */,
 			);
@@ -347,10 +345,10 @@
 				39F5456F19C8FF8400FEADFB /* DriveStore.swift in Sources */,
 				39F5457519C9178A00FEADFB /* Drive.swift in Sources */,
 				39F5456A19C8F7CB00FEADFB /* AppDelegate.swift in Sources */,
+				39F5457719C95E5000FEADFB /* DriveDetector.swift in Sources */,
 				39F5457319C90C7A00FEADFB /* TrackingMapView.swift in Sources */,
 				39F5457119C9000E00FEADFB /* MainViewController.swift in Sources */,
 				39F5456D19C8FBE300FEADFB /* DriveController.swift in Sources */,
-				52F295271888A2950084E0D2 /* DDDriverDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
