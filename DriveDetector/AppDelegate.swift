@@ -12,18 +12,18 @@ import UIKit
 class DDAppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
-    var driveController: DDDriveController!
+    var driveController: DriveController!
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool
     {
-        self.driveController = DDDriveController()
+        self.driveController = DriveController()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var driveViewController = storyboard.instantiateInitialViewController() as DDViewController
-        driveViewController.setDetector(self.driveController.driveDetector)
+        var driveViewController = storyboard.instantiateInitialViewController() as MainViewController
+//        driveViewController.setDetector(self.driveController.driveDetector)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = driveViewController//.setRootViewController(driveViewController)
+        self.window?.rootViewController = driveViewController
         self.window?.makeKeyAndVisible()
         
         return true
