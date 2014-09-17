@@ -11,7 +11,7 @@ import UIKit
 class DriveStore: NSObject
 {
     
-    func addDrive(drive: DDDrive)
+    func addDrive(drive: Drive)
     {
         //Empty for now
     }

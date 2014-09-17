@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol DDDriveDetectorDelegate;
-@protocol DDDriveDetectorControlDelegate;
+@protocol DDDriveDetectorDelegate, DDDriveDetectorControlDelegate;
+@class CLLocation, Drive;
 
 @protocol DDDriverDetector <NSObject>
 
@@ -51,8 +51,6 @@
 
 @end
 
-@class CLLocation;
-
 @protocol DDDriveDetectorDelegate <NSObject>
 
 @optional
@@ -62,11 +60,9 @@
 
 @end
 
-@class DDDrive;
-
 @protocol DDDriveDetectorControlDelegate<NSObject>
 
 @optional
-- (void)driveDetector:(id<DDDriverDetector>)driveDetector didFinishDrive:(DDDrive *)drive;
+- (void)driveDetector:(id<DDDriverDetector>)driveDetector didFinishDrive:(Drive *)drive;
 
 @end

@@ -23,7 +23,7 @@ class DriveController: NSObject, DDDriveDetectorControlDelegate
     }
     
     //MARK: - DDDriveDetectorControlDelegate
-    func driveDetector(driveDetector: DDDriverDetectorProtocol!, didFinishDrive drive: DDDrive!)
+    func driveDetector(driveDetector: DDDriverDetectorProtocol!, didFinishDrive drive: Drive!)
     {
         self.driveStore.addDrive(drive)
     }

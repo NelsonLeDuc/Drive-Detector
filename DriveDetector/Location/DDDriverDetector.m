@@ -7,7 +7,7 @@
 //
 
 #import "DDDriverDetector.h"
-#import "DDDrive.h"
+#import "DriveDetector-Swift.h"
 @import CoreLocation;
 @import CoreMotion;
 
@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CMMotionActivityManager *activityManager;
-@property (nonatomic, strong) DDDrive *currentDrive;
+@property (nonatomic, strong) Drive *currentDrive;
 @property (nonatomic, strong) CMMotionActivity *currentActivity;
 @property (nonatomic, strong) NSTimer *inactivityTimer;
 @property (nonatomic, assign, readwrite) BOOL detectingLocation;
@@ -56,7 +56,7 @@
 {
     if ([CLLocationManager locationServicesEnabled])
     {
-        _currentDrive = [[DDDrive alloc] init];
+        _currentDrive = [[Drive alloc] init];
         
         if (!self.ignoreMotionActivity && [CMMotionActivityManager isActivityAvailable])
             [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMMotionActivity *activity) {
@@ -83,7 +83,7 @@
 
 - (void)restartDrive
 {
-    self.currentDrive = [[DDDrive alloc] init];
+    self.currentDrive = [[Drive alloc] init];
     [self startDetecting];
 }
 
