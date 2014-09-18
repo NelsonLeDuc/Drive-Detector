@@ -17,6 +17,7 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     @IBOutlet var motionSwitch: UISwitch!
     @IBOutlet var trackSwitch: UISwitch!
     @IBOutlet var trackingMapView: TrackingMapView!
+    @IBOutlet var containerView: UIView!
     
     var detector: DriveDetector?
     
@@ -33,6 +34,11 @@ class MainViewController: UIViewController, DriveDetectorDelegate
         self.detector?.delegate = self
         self.detector?.ignoreMotionActivity = self.motionSwitch.on
         self.detector?.startDetecting()
+        
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        blurView.frame = self.containerView.frame
+        self.containerView.addSubview(blurView)
+        self.containerView.sendSubviewToBack(blurView)
     }
 
     //MARK: - IBAction
@@ -52,13 +58,6 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     {
         self.trackingMapView.trackUser = self.trackSwitch.on
     }
-    
-//    func setDetector(detector: DriveDetector)
-//    {
-//        detector.ignoreMotionActivity = self.motionSwitch.on
-//        detector.delegate = self
-//        detector.startDetecting()
-//    }
     
     //MARK: - DDDriveDetectorDelegate
     func driveDetectorBeganUpdatingLocations()

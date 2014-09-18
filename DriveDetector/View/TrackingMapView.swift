@@ -103,7 +103,7 @@ public class TrackingMapView: UIView, MKMapViewDelegate
     {
         if self.lineColor == nil
         {
-            self.lineColor = UIColor.randomColorDislike(UIColor(integersRed: 251, green: 211, blue: 40, alpha: 255))
+            self.lineColor = UIColor.randomColor()
         }
         
         var renderer = MKPolylineRenderer(polyline: overlay as MKPolyline)

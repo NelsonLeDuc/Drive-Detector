@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FACC3B1132B4BA2BFC03787 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E79971065F354D86AED98913 /* libPods.a */; };
+		39093D7A19CA9A640048C4DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39093D7919CA9A640048C4DB /* Extensions.swift */; };
 		39F5456A19C8F7CB00FEADFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5456919C8F7CB00FEADFB /* AppDelegate.swift */; };
 		39F5456D19C8FBE300FEADFB /* DriveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5456C19C8FBE300FEADFB /* DriveController.swift */; };
 		39F5456F19C8FF8400FEADFB /* DriveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5456E19C8FF8400FEADFB /* DriveStore.swift */; };
@@ -16,7 +17,6 @@
 		39F5457519C9178A00FEADFB /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5457419C9178A00FEADFB /* Drive.swift */; };
 		39F5457719C95E5000FEADFB /* DriveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5457619C95E5000FEADFB /* DriveDetector.swift */; };
 		52E1C100188B73D8006447D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E1C0FF188B73D8006447D3 /* MapKit.framework */; };
-		52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */; };
 		52F294F11888A26D0084E0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F01888A26D0084E0D2 /* Foundation.framework */; };
 		52F294F31888A26D0084E0D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F21888A26D0084E0D2 /* CoreGraphics.framework */; };
 		52F294F51888A26D0084E0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F294F41888A26D0084E0D2 /* UIKit.framework */; };
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		164999F5EF6B40BBBE91CDDF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		39093D7919CA9A640048C4DB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39F5456919C8F7CB00FEADFB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39F5456B19C8F86200FEADFB /* DriveDetector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DriveDetector-Bridging-Header.h"; sourceTree = "<group>"; };
 		39F5456C19C8FBE300FEADFB /* DriveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveController.swift; sourceTree = "<group>"; };
@@ -51,8 +52,6 @@
 		39F5457419C9178A00FEADFB /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		39F5457619C95E5000FEADFB /* DriveDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDetector.swift; sourceTree = "<group>"; };
 		52E1C0FF188B73D8006447D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
-		52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
 		52F294ED1888A26D0084E0D2 /* DriveDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F294F01888A26D0084E0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52F294F21888A26D0084E0D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -156,8 +155,7 @@
 				39F5457019C9000E00FEADFB /* MainViewController.swift */,
 				52F295081888A26D0084E0D2 /* Images.xcassets */,
 				52F294F71888A26D0084E0D2 /* Supporting Files */,
-				52E1C10E188BDE0B006447D3 /* UIColor+RandomColor.h */,
-				52E1C10F188BDE0B006447D3 /* UIColor+RandomColor.m */,
+				39093D7919CA9A640048C4DB /* Extensions.swift */,
 			);
 			path = DriveDetector;
 			sourceTree = "<group>";
@@ -341,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E1C110188BDE0B006447D3 /* UIColor+RandomColor.m in Sources */,
+				39093D7A19CA9A640048C4DB /* Extensions.swift in Sources */,
 				39F5456F19C8FF8400FEADFB /* DriveStore.swift in Sources */,
 				39F5457519C9178A00FEADFB /* Drive.swift in Sources */,
 				39F5456A19C8F7CB00FEADFB /* AppDelegate.swift in Sources */,
