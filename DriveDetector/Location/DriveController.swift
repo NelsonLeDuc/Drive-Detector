@@ -8,16 +8,15 @@
 
 import UIKit
 
-class DriveController: NSObject, DriveDetectorControlDelegate
+class DriveController: DriveDetectorControlDelegate
 {
     let driveDetector: DriveDetector
     private let driveStore: DriveStore
     
-    override init()
+    init()
     {
         self.driveDetector = DriveDetector()
         self.driveStore = DriveStore()
-        super.init()
         
         self.driveDetector.controlDelegate = self
     }

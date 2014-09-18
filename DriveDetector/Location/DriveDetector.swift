@@ -94,6 +94,8 @@ class DriveDetector: NSObject, CLLocationManagerDelegate
     
     func restartDrive()
     {
+        self.stopDetecting()
+        
         self.currentDrive = Drive()
         self.startDetecting()
     }
@@ -164,6 +166,7 @@ class DriveDetector: NSObject, CLLocationManagerDelegate
     }
 }
 
+//MARK: - Delegate Protocols
 @objc protocol DriveDetectorDelegate
 {
     optional func driveDetectorBeganUpdatingLocations()

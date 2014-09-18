@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class Drive: NSObject
+class Drive
 {
     var averageSpeed: Double
     var averageAcceleration: Double
@@ -19,7 +19,7 @@ class Drive: NSObject
     private var previousSpeed: Double
     private var previousTime: NSTimeInterval
     
-    override init()
+    init()
     {
         self.averageSpeed = 0
         self.averageAcceleration = 0

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriveStore: NSObject
+class DriveStore
 {
     
     func addDrive(drive: Drive)

@@ -153,9 +153,9 @@
 				39F5456B19C8F86200FEADFB /* DriveDetector-Bridging-Header.h */,
 				52F295021888A26D0084E0D2 /* Main.storyboard */,
 				39F5457019C9000E00FEADFB /* MainViewController.swift */,
+				39093D7919CA9A640048C4DB /* Extensions.swift */,
 				52F295081888A26D0084E0D2 /* Images.xcassets */,
 				52F294F71888A26D0084E0D2 /* Supporting Files */,
-				39093D7919CA9A640048C4DB /* Extensions.swift */,
 			);
 			path = DriveDetector;
 			sourceTree = "<group>";
