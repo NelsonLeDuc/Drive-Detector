@@ -25,14 +25,14 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print(self.view.description)
-        self.updateViewLabelsWithDriverDetector(self.detector)
+        self.updateViewLabelsWithDriverDetector()
         
         self.trackingMapView.manualLocationTracking = true
         self.trackingMapView.trackUser = self.trackSwitch.on
         
         self.detector?.delegate = self
         self.detector?.ignoreMotionActivity = self.motionSwitch.on
+        self.detector?.displayingMapView = self.trackingMapView
         self.detector?.startDetecting()
         
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
@@ -45,8 +45,7 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     @IBAction func restartButtonPressed(sender: UIButton)
     {
         self.detector?.restartDrive()
-        self.updateViewLabelsWithDriverDetector(self.detector)
-        self.trackingMapView.endCurrentLine()
+        self.updateViewLabelsWithDriverDetector()
     }
     
     @IBAction func motionSwitchChanged(sender: UISwitch)
@@ -62,18 +61,17 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     //MARK: - DDDriveDetectorDelegate
     func driveDetectorBeganUpdatingLocations()
     {
-        self.updateViewLabelsWithDriverDetector(self.detector)
+        self.updateViewLabelsWithDriverDetector()
     }
     
     func driveDetectorStoppedUpdatingLocations()
     {
-        self.updateViewLabelsWithDriverDetector(self.detector)
+        self.updateViewLabelsWithDriverDetector()
     }
     
     func driveDetector(driveDetector: DriveDetector!, didUpdateToLocation location: CLLocation!)
     {
-        self.updateViewLabelsWithDriverDetector(self.detector)
-        self.trackingMapView.updateLineLocation(location)
+        self.updateViewLabelsWithDriverDetector()
     }
     
     //MARK: - Overrides
@@ -83,10 +81,10 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     }
     
     //MARK: - Private Methods
-    func updateViewLabelsWithDriverDetector(driverDetector: DriveDetector?)
+    func updateViewLabelsWithDriverDetector()
     {
         var string = "Not detecting locations"
-        if let detector = driverDetector
+        if let detector = self.detector
         {
             self.speedLabel.text = "\(detector.averageSpeed)"
             self.accelerationLabel.text = "\(detector.averageAcceleration)"

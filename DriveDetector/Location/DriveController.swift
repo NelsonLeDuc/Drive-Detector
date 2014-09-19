@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriveController: DriveDetectorControlDelegate
+class DriveController
 {
     let driveDetector: DriveDetector
     private let driveStore: DriveStore
@@ -21,7 +21,10 @@ class DriveController: DriveDetectorControlDelegate
         self.driveDetector.controlDelegate = self
     }
     
-    //MARK: - DDDriveDetectorControlDelegate
+}
+
+extension DriveController: DriveDetectorControlDelegate
+{
     func driveDetector(driveDetector: DriveDetector, didFinishDrive drive: Drive?)
     {
         if let finishedDrive = drive
@@ -29,5 +32,4 @@ class DriveController: DriveDetectorControlDelegate
             self.driveStore.addDrive(finishedDrive)
         }
     }
-    
 }

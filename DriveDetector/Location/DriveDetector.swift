@@ -12,6 +12,7 @@ import CoreMotion
 
 class DriveDetector: NSObject, CLLocationManagerDelegate
 {
+    weak var displayingMapView: TrackingMapView?
     weak var delegate: DriveDetectorDelegate?
     weak var controlDelegate: DriveDetectorControlDelegate?
     
@@ -88,13 +89,15 @@ class DriveDetector: NSObject, CLLocationManagerDelegate
         self.stopUpdatingLocationData()
         self.activityManager.stopActivityUpdates()
         
-        self.controlDelegate?.driveDetector?(self, didFinishDrive: self.currentDrive)
+        self.controlDelegate?.driveDetector(self, didFinishDrive: self.currentDrive)
         self.currentDrive = nil
     }
     
     func restartDrive()
     {
         self.stopDetecting()
+        
+        self.displayingMapView?.endCurrentLine()
         
         self.currentDrive = Drive()
         self.startDetecting()
@@ -141,7 +144,7 @@ class DriveDetector: NSObject, CLLocationManagerDelegate
         self.inactivityTimer = NSTimer.scheduledTimerWithTimeInterval(20.0, target: self, selector: Selector("activityFailedToOccurInTime"), userInfo: nil, repeats: false)
     }
     
-    private func activityFailedToOccurInTime()
+    func activityFailedToOccurInTime()
     {
         self.inactivityTimer?.invalidate()
         self.inactivityTimer = nil
@@ -162,6 +165,8 @@ class DriveDetector: NSObject, CLLocationManagerDelegate
             self.updateInactivityTimer()
             self.currentDrive?.addSpeed(location.speed, withTimeStamp: location.timestamp)
             self.delegate?.driveDetector?(self, didUpdateToLocation: location)
+            
+            self.displayingMapView?.updateLineLocation(location)
         }
     }
 }
@@ -174,7 +179,7 @@ class DriveDetector: NSObject, CLLocationManagerDelegate
     optional func driveDetector(driveDetector: DriveDetector, didUpdateToLocation location: CLLocation)
 }
 
-@objc protocol DriveDetectorControlDelegate
+protocol DriveDetectorControlDelegate: class
 {
-    optional func driveDetector(driveDetector: DriveDetector, didFinishDrive drive: Drive?)
+    func driveDetector(driveDetector: DriveDetector, didFinishDrive drive: Drive?)
 }

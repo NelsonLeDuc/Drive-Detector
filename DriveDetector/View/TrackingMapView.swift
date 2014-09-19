@@ -42,7 +42,7 @@ public class TrackingMapView: UIView, MKMapViewDelegate
     }
     
     //MARK: - Public Methods
-    func updateLineLocation(location: CLLocation)
+    public func updateLineLocation(location: CLLocation)
     {
         if self.manualLocationTracking
         {
@@ -50,7 +50,7 @@ public class TrackingMapView: UIView, MKMapViewDelegate
         }
     }
     
-    func endCurrentLine()
+    public func endCurrentLine()
     {
         if self.polyline?.pointCount < 10
         {
@@ -63,7 +63,7 @@ public class TrackingMapView: UIView, MKMapViewDelegate
     }
     
     //MARK: Private Methods
-    func setupView()
+    private func setupView()
     {
         self.mapView.delegate = self
         self.mapView.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -78,7 +78,7 @@ public class TrackingMapView: UIView, MKMapViewDelegate
         self.updateMapViewWithTracking(true)
     }
     
-    func updateMapViewWithTracking(tracking: Bool)
+    private func updateMapViewWithTracking(tracking: Bool)
     {
         self.mapView.userTrackingMode = tracking ? .FollowWithHeading : .None
         self.mapView.scrollEnabled = !tracking
@@ -113,7 +113,7 @@ public class TrackingMapView: UIView, MKMapViewDelegate
         return renderer
     }
     
-    func addLocationToArray(location: CLLocation)
+    private func addLocationToArray(location: CLLocation)
     {
         if let lastPos = self.linePositions.last
         {
