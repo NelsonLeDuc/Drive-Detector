@@ -77,3 +77,10 @@ extension UIColor
     }
     
 }
+
+let kMeterAccelToMilesAccelFactor = 8052.9706513958
+
+public func MetersAccelToMilesAccel(metersAccel: Double) -> Double
+{
+    return kMeterAccelToMilesAccelFactor * metersAccel
+}
