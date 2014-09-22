@@ -19,6 +19,7 @@ class MainViewController: UIViewController, DriveDetectorDelegate
     @IBOutlet var trackingMapView: TrackingMapView!
     @IBOutlet var containerView: UIView!
     
+    var blurView: UIView?
     var detector: DriveDetector?
     
     //MARK: - View Lifecycle
@@ -34,13 +35,18 @@ class MainViewController: UIViewController, DriveDetectorDelegate
         self.detector?.ignoreMotionActivity = self.motionSwitch.on
         self.detector?.displayingMapView = self.trackingMapView
         self.detector?.startDetecting()
-        
-        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        blurView.frame = self.containerView.frame
-        self.containerView.addSubview(blurView)
-        self.containerView.sendSubviewToBack(blurView)
     }
 
+    override func viewWillLayoutSubviews()
+    {
+        self.blurView?.removeFromSuperview()
+        
+        self.blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        self.blurView!.frame = self.containerView.bounds
+        self.containerView.addSubview(blurView!)
+        self.containerView.sendSubviewToBack(blurView!)
+    }
+    
     //MARK: - IBAction
     @IBAction func restartButtonPressed(sender: UIButton)
     {
@@ -86,8 +92,11 @@ class MainViewController: UIViewController, DriveDetectorDelegate
         var string = "Not detecting locations"
         if let detector = self.detector
         {
-            self.speedLabel.text = "\(detector.averageSpeed)"
-            self.accelerationLabel.text = "\(detector.averageAcceleration)"
+            let MPH = MPHfromMetersPerSecond(CGFloat(detector.averageSpeed))
+            let meterAccel = MetersAccelToMilesAccel(detector.averageAcceleration)
+            
+            self.speedLabel.text = "\(MPH)"
+            self.accelerationLabel.text = "\(meterAccel)"
             
             string = detector.detectingLocation ? "Detecting locations" : "Not detecting locations"
         }
